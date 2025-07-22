@@ -6,33 +6,21 @@
   <title>Delay & Reverb Time Calculator</title>
   <meta name="description" content="BPM‑based Delay & Reverb Time Calculator: enter your tempo to instantly generate musically‑aligned pre‑delay, decay, and delay settings (ms & Hz). Free, ad‑free and ideal for producers, engineers, guitarists, vocalists, drummers—anyone working with time‑based audio effects.">
   <link rel="canonical" href="https://babyhooligan.com/delay-reverb-time-calculator" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dubtechno777/website/main/assets/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Display&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #f4f4f4;
-      --text: #222;
-      --header-bg: #f4f4f4;
-      --header-link: #000000;
-      --accent: #5c7896;
-      --border: #ddd;
-      --table-bg: #ffffff;
-      --hover-bg: #d0f4de;
-      --hover-text: #000000;
-      --ui-radius: 10px;
-    }
-
-    body.dark {
       --bg: #1a1a1a;
       --text: #eaeaea;
       --header-bg: #1a1a1a;
       --header-link: #ffffff;
-      --accent: #8aa0bf;
+      --accent: #ffd60a;
       --border: #444;
       --table-bg: #2a2a2a;
-      --hover-bg: #3a5a40;
-      --hover-text: #ffffff;
+      --hover-bg: #ffd60a;
+      --hover-text: #000000;
+      --ui-radius: 10px;
     }
 
     body {
@@ -64,15 +52,15 @@
     }
 
     .logo {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
 
     .logo:hover {
-      transform: scale(1.5);
+      transform: scale(1.2);
     }
 
     .nav-link {
@@ -85,31 +73,6 @@
 
     .nav-link:hover {
       color: var(--accent);
-    }
-
-    .theme-toggle {
-      width: 50px;
-      height: 26px;
-      border-radius: 13px;
-      background: var(--header-link);
-      position: relative;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .toggle-thumb {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 20px;
-      height: 20px;
-      background: var(--header-bg);
-      border-radius: 50%;
-      transition: left 0.3s;
-    }
-
-    body.dark .toggle-thumb {
-      left: 27px;
     }
 
     main {
@@ -199,12 +162,8 @@
       transition: fill 0.3s;
     }
 
-    body.dark .youtube-icon:hover {
+    .youtube-icon:hover {
       fill: #fff;
-    }
-
-    body:not(.dark) .youtube-icon:hover {
-      fill: #000;
     }
 
     @media (max-width: 768px) {
@@ -214,17 +173,14 @@
     }
   </style>
 </head>
-<body>
+<body class="dark">
   <header>
-  <div class="header-left">
-    <a href="/"><img src="https://yt3.googleusercontent.com/d_1wB5uiSDgS_JTQm_CrE8dc4cwsat0JI5q3zIxr-htOR7f337JhjUALYUkwbmMs6740zix9mA=s160-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo" /></a>
-    <a href="/delay-reverb-time-calculator" class="nav-link">Calculator</a>
-    <a href="/videos" class="nav-link">Videos</a>
-  </div>
-  <div class="theme-toggle" id="themeToggle" role="switch" aria-checked="true" tabindex="0" aria-label="Toggle light and dark mode">
-    <div class="toggle-thumb"></div>
-  </div>
-</header>
+    <div class="header-left">
+      <a href="/"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="Logo" class="logo" /></a>
+      <a href="/delay-reverb-time-calculator" class="nav-link">Calculator</a>
+      <a href="/videos" class="nav-link">Videos</a>
+    </div>
+  </header>
 
   <main>
     <section class="calculator-container">
@@ -274,91 +230,69 @@
     </a>
   </footer>
 
-<script>
-  const bpmInput = document.getElementById('bpmInput');
-  const tableBody = document.getElementById('tableBody');
-  const reverbTableBody = document.getElementById('reverbTableBody');
-  const themeToggle = document.getElementById('themeToggle');
-  const body = document.body;
+  <script>
+    const bpmInput = document.getElementById('bpmInput');
+    const tableBody = document.getElementById('tableBody');
+    const reverbTableBody = document.getElementById('reverbTableBody');
 
-  const notes = ["1/1", "1/2", "1/4", "1/8", "1/16", "1/32"];
-  const reverbSizes = [
-    { name: "Hall", preDelayBeats: 0.125, decayBeats: 7.875 },
-    { name: "Large Room", preDelayBeats: 0.0625, decayBeats: 3.875 },
-    { name: "Small Room", preDelayBeats: 0.03125, decayBeats: 1.53125 },
-    { name: "Tight Ambience", preDelayBeats: 0.0078125, decayBeats: 0.4921875 }
-  ];
+    const notes = ["1/1", "1/2", "1/4", "1/8", "1/16", "1/32"];
+    const reverbSizes = [
+      { name: "Hall", preDelayBeats: 0.125, decayBeats: 7.875 },
+      { name: "Large Room", preDelayBeats: 0.0625, decayBeats: 3.875 },
+      { name: "Small Room", preDelayBeats: 0.03125, decayBeats: 1.53125 },
+      { name: "Tight Ambience", preDelayBeats: 0.0078125, decayBeats: 0.4921875 }
+    ];
 
-  function formatHz(ms) {
-    const hz = 1000 / ms;
-    return `${hz.toFixed(2)} Hz`;
-  }
-
-  function updateDelayTable(bpm) {
-    tableBody.innerHTML = "";
-    notes.forEach(note => {
-      const [base, denom] = note.split("/").map(Number);
-      const beatFactor = base / denom;
-      const ms = (60000 / bpm) * (4 * beatFactor);
-      const dottedMs = ms * 1.5;
-      const tripletMs = (ms * 2) / 3;
-
-      tableBody.innerHTML += `
-        <tr>
-          <td>${note}</td>
-          <td>${ms.toFixed(1)} ms / ${formatHz(ms)}</td>
-          <td>${dottedMs.toFixed(1)} ms / ${formatHz(dottedMs)}</td>
-          <td>${tripletMs.toFixed(1)} ms / ${formatHz(tripletMs)}</td>
-        </tr>`;
-    });
-  }
-
-  function updateReverbTable(bpm) {
-    reverbTableBody.innerHTML = "";
-    const beatMs = 60000 / bpm;
-    reverbSizes.forEach(size => {
-      const pre = size.preDelayBeats * beatMs;
-      const decay = size.decayBeats * beatMs;
-      const total = pre + decay;
-      reverbTableBody.innerHTML += `
-        <tr>
-          <td>${size.name}</td>
-          <td>${pre.toFixed(2)} ms</td>
-          <td>${decay.toFixed(2)} ms</td>
-          <td>${total.toFixed(2)} ms</td>
-        </tr>`;
-    });
-  }
-
-  function updateTables() {
-    const bpm = Number(bpmInput.value);
-    if (!bpm || bpm < 1) return;
-    updateDelayTable(bpm);
-    updateReverbTable(bpm);
-  }
-
-  bpmInput.addEventListener('input', updateTables);
-  updateTables();
-
-  // Theme toggle
-  function setTheme(dark) {
-    if (dark) {
-      body.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      body.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+    function formatHz(ms) {
+      const hz = 1000 / ms;
+      return `${hz.toFixed(2)} Hz`;
     }
-  }
 
-  const savedTheme = localStorage.getItem('theme');
-  setTheme(savedTheme === 'dark');
+    function updateDelayTable(bpm) {
+      tableBody.innerHTML = "";
+      notes.forEach(note => {
+        const [base, denom] = note.split("/").map(Number);
+        const beatFactor = base / denom;
+        const ms = (60000 / bpm) * (4 * beatFactor);
+        const dottedMs = ms * 1.5;
+        const tripletMs = (ms * 2) / 3;
 
-  themeToggle.addEventListener('click', () => {
-    const isDark = body.classList.contains('dark');
-    setTheme(!isDark);
-  });
-</script>
+        tableBody.innerHTML += `
+          <tr>
+            <td>${note}</td>
+            <td>${ms.toFixed(1)} ms / ${formatHz(ms)}</td>
+            <td>${dottedMs.toFixed(1)} ms / ${formatHz(dottedMs)}</td>
+            <td>${tripletMs.toFixed(1)} ms / ${formatHz(tripletMs)}</td>
+          </tr>`;
+      });
+    }
 
+    function updateReverbTable(bpm) {
+      reverbTableBody.innerHTML = "";
+      const beatMs = 60000 / bpm;
+      reverbSizes.forEach(size => {
+        const pre = size.preDelayBeats * beatMs;
+        const decay = size.decayBeats * beatMs;
+        const total = pre + decay;
+        reverbTableBody.innerHTML += `
+          <tr>
+            <td>${size.name}</td>
+            <td>${pre.toFixed(2)} ms</td>
+            <td>${decay.toFixed(2)} ms</td>
+            <td>${total.toFixed(2)} ms</td>
+          </tr>`;
+      });
+    }
+
+    function updateTables() {
+      const bpm = Number(bpmInput.value);
+      if (!bpm || bpm < 1) return;
+      updateDelayTable(bpm);
+      updateReverbTable(bpm);
+    }
+
+    bpmInput.addEventListener('input', updateTables);
+    updateTables();
+  </script>
 </body>
 </html>
