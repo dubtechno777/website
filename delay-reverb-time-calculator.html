@@ -29,9 +29,9 @@
       color: var(--text);
       margin: 0;
       padding: 0;
-      transition: background 0.3s, color 0.3s;
     }
 
+    /* === Унифицированный хедер === */
     header {
       display: flex;
       align-items: center;
@@ -52,8 +52,8 @@
     }
 
     .logo {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       object-fit: cover;
       transition: transform 0.3s ease;
@@ -65,7 +65,7 @@
 
     .nav-link {
       text-decoration: none;
-      color: var(--text);
+      color: var(--header-link);
       font-weight: 500;
       font-size: 1rem;
       transition: color 0.3s;
@@ -167,13 +167,13 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        justify-content: space-between;
+      .header-left {
+        gap: 1rem;
       }
     }
   </style>
 </head>
-<body class="dark">
+<body>
   <header>
     <div class="header-left">
       <a href="/"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="Logo" class="logo" /></a>
