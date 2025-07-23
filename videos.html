@@ -28,9 +28,12 @@
       color: var(--text);
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* === Унифицированный хедер (как в index.html) === */
+    /* === Унифицированный хедер === */
     header {
       display: flex;
       align-items: center;
@@ -74,22 +77,54 @@
       color: var(--accent);
     }
 
-    /* Уникальные стили для страницы видео */
     main {
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1.5rem;
       text-align: center;
+      flex: 1;
     }
 
     h1 {
       font-size: 2rem;
       margin-bottom: 1.5rem;
     }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    /* === Футер (как на других страницах) === */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      background: var(--bg);
+      color: var(--text);
+      margin-top: auto; /* Прижимаем футер к низу */
+    }
+
+    .youtube-icon {
+      fill: #888;
+      transition: fill 0.3s;
+    }
+
+    .youtube-icon:hover {
+      fill: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .header-left {
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Хедер (одинаковый для всех) -->
   <header>
     <div class="header-left">
       <a href="/"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="Logo" class="logo" /></a>
@@ -101,10 +136,17 @@
   <main>
     <h1>Videos</h1>
     <p>Thank you for visiting! Stay tuned for videos coming soon to my YouTube channel.</p>
+    <p>More content on sound design, production, and more will be posted here shortly.</p>
+    <p>Check back soon!</p>
   </main>
 
   <footer>
-    <!-- Футер (как в index.html) -->
+    <div>© 2025 BabyHooligan</div>
+    <a href="https://youtube.com/@baby.hooligan?si=PHZCx66GTvvhCtpt" target="_blank" aria-label="YouTube">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 576 512" class="youtube-icon">
+        <path d="M549.7 124.1c-6.3-24-25.1-42.8-49-49.1C457.5 64 288 64 288 64s-169.5 0-212.7 11c-23.9 6.3-42.7 25.1-49 49.1C16 168.3 16 256 16 256s0 87.7 10.3 131.9c6.3 24 25.1 42.8 49 49.1C118.5 448 288 448 288 448s169.5 0 212.7-11c23.9-6.3 42.7-25.1 49-49.1C560 343.7 560 256 560 256s0-87.7-10.3-131.9zM232 336V176l142 80-142 80z"/>
+      </svg>
+    </a>
   </footer>
 </body>
 </html>
