@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /private/
 Disallow: /tmp/
+Disallow: /cgi-bin/
 
 Sitemap: https://babyhooligan.com/sitemap.xml
