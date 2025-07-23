@@ -6,7 +6,11 @@
   <title>BabyHooligan — Intro</title>
   <link rel="canonical" href="https://babyhooligan.com/" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dubtechno777/website/main/assets/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Display&display=swap" rel="stylesheet" />
+  
+  <!-- Исправленное подключение шрифта Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -23,14 +27,13 @@
     }
 
     body {
-      font-family: 'Inter Display', sans-serif;
+      font-family: 'Inter', sans-serif; /* Изменено с 'Inter Display' на 'Inter' */
       background: var(--bg);
       color: var(--text);
       margin: 0;
       padding: 0;
     }
 
-    /* === Унифицированный хедер (начало) === */
     header {
       display: flex;
       align-items: center;
@@ -73,7 +76,6 @@
     .nav-link:hover {
       color: var(--accent);
     }
-    /* === Унифицированный хедер (конец) === */
 
     main {
       max-width: 800px;
