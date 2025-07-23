@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Delay & Reverb Time Calculator</title>
-  <meta name="description" content="BPM‑based Delay & Reverb Time Calculator: enter your tempo to instantly generate musically‑aligned pre‑delay, decay, and delay settings (ms & Hz). Free, ad‑free and ideal for producers, engineers, guitarists, vocalists, drummers—anyone working with time‑based audio effects.">
+  <title>BPM Calculator for Reverb & Delay | BabyHooligan</title>
+  <meta name="description" content="Free BPM-based reverb & delay calculator for music producers and mixing engineers. Make your workflow faster with instant time and frequency calculations.">
+  <meta name="keywords" content="BPM calculator, reverb time, delay time, music production tool, free audio tool, mixing engineer">
+  <meta property="og:title" content="Free BPM Calculator for Reverb & Delay">
+  <meta property="og:description" content="Essential tool for producers and mixing engineers - calculate perfect effect times based on BPM">
   <link rel="canonical" href="https://babyhooligan.com/delay-reverb-time-calculator" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dubtechno777/website/main/assets/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Display&display=swap" rel="stylesheet" />
+  
+  <!-- Исправленное подключение шрифта -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -24,14 +31,14 @@
     }
 
     body {
-      font-family: 'Inter Display', sans-serif;
+      font-family: 'Inter', sans-serif; /* Изменено с 'Inter Display' */
       background: var(--bg);
       color: var(--text);
       margin: 0;
       padding: 0;
     }
 
-    /* === Унифицированный хедер === */
+    /* ВСЕ ОСТАЛЬНЫЕ СТИЛИ БЕЗ ИЗМЕНЕНИЙ */
     header {
       display: flex;
       align-items: center;
@@ -174,6 +181,7 @@
   </style>
 </head>
 <body>
+  <!-- ВЕСЬ HTML БЕЗ ИЗМЕНЕНИЙ -->
   <header>
     <div class="header-left">
       <a href="/"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="Logo" class="logo" /></a>
@@ -231,6 +239,7 @@
   </footer>
 
   <script>
+    // ВЕСЬ JAVASCRIPT БЕЗ ИЗМЕНЕНИЙ
     const bpmInput = document.getElementById('bpmInput');
     const tableBody = document.getElementById('tableBody');
     const reverbTableBody = document.getElementById('reverbTableBody');
