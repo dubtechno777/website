@@ -3,155 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1a1a1a">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>BabyHooligan — Intro</title>
   <link rel="canonical" href="https://babyhooligan.com/" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dubtechno777/website/main/assets/favicon.png" />
   
-  <!-- Исправленное подключение шрифта Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #1a1a1a;
-      --text: #eaeaea;
-      --header-bg: #1a1a1a;
-      --header-link: #ffffff;
-      --accent: #ffd60a;
-      --border: #444;
-      --table-bg: #2a2a2a;
-      --hover-bg: #ffd60a;
-      --hover-text: #000000;
-      --ui-radius: 10px;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif; /* Изменено с 'Inter Display' на 'Inter' */
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 1.5rem;
-      background: var(--header-bg);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      flex-wrap: wrap;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .logo:hover {
-      transform: scale(1.2);
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: var(--header-link);
-      font-weight: 500;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    .nav-link:hover {
-      color: var(--accent);
-    }
-
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      text-align: center;
-    }
-
-    .intro-image {
-      width: 100%;
-      height: auto;
-      border-radius: var(--ui-radius);
-      margin-bottom: 2rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      font-size: 0.9rem;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    .youtube-icon {
-      fill: #888;
-      transition: fill 0.3s;
-    }
-
-    .youtube-icon:hover {
-      fill: #fff;
-    }
-
-    @media (max-width: 768px) {
-      .header-left {
-        gap: 1rem;
-      }
-      .nav-link {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="header-left">
-      <a href="/"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="Logo" class="logo" /></a>
+      <a href="/"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="BabyHooligan Logo" class="logo" loading="lazy"></a>
       <a href="/delay-reverb-time-calculator" class="nav-link">Calculator</a>
       <a href="/videos" class="nav-link">Videos</a>
     </div>
   </header>
 
-  <main>
-    <img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/background.png" alt="Intro Image" class="intro-image" />
+  <main class="index-main">
+    <picture>
+      <source srcset="https://raw.githubusercontent.com/dubtechno777/website/main/assets/background.webp" type="image/webp">
+      <img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/background.png" alt="Music Studio" class="intro-image" loading="lazy">
+    </picture>
+    
     <h1>About</h1>
-    <p>I’m a bedroom producer who loves dub, atmospheric techno, Detroit techno, and just good electronic music.</p>
-    <p>I’ve picked up some skills in sound design and production over time, and now I want to share what I’ve learned with others who are just starting out.</p>
+    <p>I'm a bedroom producer who loves dub, atmospheric techno, Detroit techno, and just good electronic music.</p>
+    <p>I've picked up some skills in sound design and production over time, and now I want to share what I've learned with others who are just starting out.</p>
     <p>I also built a calculator to make life a bit easier on this path.</p>
   </main>
 
   <footer>
     <div>© 2025 BabyHooligan</div>
-    <a href="https://youtube.com/@baby.hooligan?si=PHZCx66GTvvhCtpt" target="_blank" aria-label="YouTube">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 576 512" class="youtube-icon">
+    <a href="https://youtube.com/@baby.hooligan?si=PHZCx66GTvvhCtpt" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 576 512" class="youtube-icon">
         <path d="M549.7 124.1c-6.3-24-25.1-42.8-49-49.1C457.5 64 288 64 288 64s-169.5 0-212.7 11c-23.9 6.3-42.7 25.1-49 49.1C16 168.3 16 256 16 256s0 87.7 10.3 131.9c6.3 24 25.1 42.8 49 49.1C118.5 448 288 448 288 448s169.5 0 212.7-11c23.9-6.3 42.7-25.1 49-49.1C560 343.7 560 256 560 256s0-87.7-10.3-131.9zM232 336V176l142 80-142 80z"/>
       </svg>
     </a>
