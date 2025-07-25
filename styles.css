@@ -12,6 +12,11 @@
   --ui-radius: 10px;
 }
 
+/* Плавный скролл для всей страницы */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
@@ -21,6 +26,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 header {
@@ -33,6 +39,11 @@ header {
   top: 0;
   z-index: 10;
   flex-wrap: wrap;
+  transition: box-shadow 0.3s;
+}
+
+header.scrolled {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .header-left {
@@ -60,13 +71,29 @@ header {
   color: var(--header-link);
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s;
+  transition: all 0.3s;
   padding: 0.5rem 0;
   margin: 0;
+  position: relative;
 }
 
 .nav-link:hover {
   color: var(--accent);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 main {
@@ -86,11 +113,12 @@ footer {
 
 .youtube-icon {
   fill: #888;
-  transition: fill 0.3s;
+  transition: all 0.3s;
 }
 
 .youtube-icon:hover {
   fill: #fff;
+  transform: translateY(-2px);
 }
 
 /* Page-specific styles */
@@ -107,6 +135,11 @@ footer {
   border-radius: var(--ui-radius);
   margin-bottom: 2rem;
   max-width: 600px;
+  transition: transform 0.5s ease-out;
+}
+
+.intro-image:hover {
+  transform: scale(1.02);
 }
 
 .videos-main {
@@ -120,6 +153,7 @@ footer {
   margin-top: 2rem;
 }
 
+/* Calculator specific styles */
 .calculator-main {
   display: flex;
   justify-content: center;
@@ -143,6 +177,7 @@ footer {
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .bpm-control label {
@@ -160,6 +195,31 @@ footer {
   background: var(--table-bg);
   color: var(--text);
   outline: none;
+  transition: all 0.3s;
+}
+
+.bpm-control input[type="number"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 214, 10, 0.2);
+}
+
+/* Loader styles */
+.bpm-loader {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 214, 10, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+  margin-left: 10px;
+  vertical-align: middle;
+  opacity: 0;
+  transition: opacity 0.3s;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 table {
@@ -176,6 +236,7 @@ th, td {
   padding: 0.7rem;
   text-align: center;
   border-bottom: 1px solid var(--border);
+  transition: all 0.2s;
 }
 
 th {
@@ -185,11 +246,15 @@ th {
 tr:hover {
   background: var(--hover-bg);
   color: var(--hover-text);
+  transform: scale(1.01);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
   font-size: 2rem;
 }
 
@@ -199,6 +264,44 @@ p {
   margin-bottom: 1rem;
 }
 
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+p, li, td, th, label {
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.calculator-container h1 {
+  animation-delay: 0.3s;
+}
+
+table tr {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+table tr:nth-child(1) { animation-delay: 0.5s; }
+table tr:nth-child(2) { animation-delay: 0.6s; }
+table tr:nth-child(3) { animation-delay: 0.7s; }
+table tr:nth-child(4) { animation-delay: 0.8s; }
+table tr:nth-child(5) { animation-delay: 0.9s; }
+
+/* Медиазапросы */
 @media (max-width: 768px) {
   .header-left {
     gap: 0.8rem;
@@ -224,47 +327,3 @@ p {
     padding: 0.5rem;
   }
 }
-
-/* ===== Анимация постепенного появления (Fade-in) ===== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Применяем анимацию ко всем текстовым элементам */
-body {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  animation: fadeIn 0.8s ease-out 0.2s forwards;
-  opacity: 0;
-}
-
-p, li, td, th, label {
-  animation: fadeIn 0.8s ease-out 0.4s forwards;
-  opacity: 0;
-}
-
-/* Специальные задержки для элементов калькулятора */
-.calculator-container h1 {
-  animation-delay: 0.3s;
-}
-
-table tr {
-  animation: fadeIn 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-/* Задержка для строк таблицы */
-table tr:nth-child(1) { animation-delay: 0.5s; }
-table tr:nth-child(2) { animation-delay: 0.6s; }
-table tr:nth-child(3) { animation-delay: 0.7s; }
-table tr:nth-child(4) { animation-delay: 0.8s; }
-table tr:nth-child(5) { animation-delay: 0.9s; }
