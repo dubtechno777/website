@@ -61,34 +61,6 @@
           <tbody id="tableBody"></tbody>
         </table>
       </section>
-
-      <!-- Reverb Article Accordion -->
-      <section class="article-accordion">
-        <div class="accordion-header" onclick="toggleAccordion('reverb-article')">
-          <h2>What is reverb?</h2>
-          <span class="accordion-icon">+</span>
-        </div>
-        
-        <div class="accordion-content" id="reverb-article">
-          <div class="article-images">
-            <img src="assets/lexicon480.webp" alt="Lexicon 480 reverb unit" loading="lazy">
-            <img src="assets/plate.webp" alt="Plate reverb unit" loading="lazy">
-            <img src="assets/spring.webp" alt="Spring reverb unit" loading="lazy">
-          </div>
-          
-          <div class="article-text">
-            <p>Reverberation is an effect where a sound continues to reverberate after its source has been amplified, due to multiple reflections from room reflections. These reflections interact with each other and gradually fade away, creating a sense of surround sound. In simple terms, it is an "echo" effect, but in a faster, more cohesive form.</p>
-            
-            <h3>Types of reverb:</h3>
-            <ul>
-              <li><strong>Room</strong> - simulates reflections in small spaces such as rooms, studios.</li>
-              <li><strong>Spring</strong> - Simulates the reverb created by the vibration of a spring, often used in guitar amplifiers.</li>
-              <li><strong>Digital</strong> - Created using computer algorithms, simulating various acoustic spaces.</li>
-              <li><strong>Convolution</strong> - Uses impulse responses (IR) to create realistic reverberation sounds by simulating real-world spaces.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
     </section>
   </main>
 
@@ -102,7 +74,6 @@
   </footer>
 
   <script>
-    // Calculator logic (existing)
     const bpmInput = document.getElementById('bpmInput');
     const tableBody = document.getElementById('tableBody');
     const reverbTableBody = document.getElementById('reverbTableBody');
@@ -115,6 +86,9 @@
       { name: "Small Room", preDelayBeats: 0.03125, decayBeats: 1.53125 },
       { name: "Tight Ambience", preDelayBeats: 0.0078125, decayBeats: 0.4921875 }
     ];
+
+    let timeoutId;
+    const debounceDelay = 300;
 
     function formatHz(ms) {
       const hz = 1000 / ms;
@@ -178,23 +152,15 @@
             row.style.animationDelay = `${index * 0.1}s`;
           });
         }, 50);
-      }, 300);
+      }, debounceDelay);
     }
 
     bpmInput.addEventListener('input', updateTables);
     
-    // Accordion functionality
-    function toggleAccordion(id) {
-      const content = document.getElementById(id);
-      const header = content.previousElementSibling;
-      content.classList.toggle('active');
-      header.classList.toggle('active');
-    }
-
-    // Initialize
+    // Инициализация при загрузке
     updateTables();
     
-    // Smooth header on scroll
+    // Плавный хедер при скролле
     window.addEventListener('scroll', () => {
       const header = document.querySelector('header');
       header.classList.toggle('scrolled', window.scrollY > 10);
