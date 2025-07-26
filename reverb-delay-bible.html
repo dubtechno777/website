@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1a1a1a">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Reverb/Delay Bible | BabyHooligan</title>
+  <meta name="description" content="Professional sound design guides for reverb and delay effects">
+  <link rel="canonical" href="https://babyhooligan.com/reverb-delay-bible" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dubtechno777/website/main/assets/favicon.png" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="header-left" aria-label="Main navigation">
+      <a href="index.html"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="BabyHooligan Logo" class="logo" loading="lazy"></a>
+      <a href="delay-reverb-time-calculator.html" class="nav-link">Calculator</a>
+      <a href="reverb-delay-bible.html" class="nav-link">Reverb/Delay Bible</a>
+      <a href="videos.html" class="nav-link">Videos</a>
+    </nav>
+  </header>
 
+  <main class="reverb-bible-main">
+    <h1>Reverb/Delay Bible</h1>
+    
+    <div class="reverb-bible-container">
+      <!-- Заглушка для будущего контента -->
+      <div style="background-color: var(--table-bg); border-radius: var(--ui-radius); padding: 2rem; margin-top: 1.5rem;">
+        <h2 style="color: var(--accent); margin-bottom: 1.5rem;">Coming Soon</h2>
+        <p>This section will contain professional guides about:</p>
+        <ul style="text-align: left; max-width: 500px; margin: 1rem auto; padding-left: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;">Reverb time calculation techniques</li>
+          <li style="margin-bottom: 0.5rem;">Advanced delay timing</li>
+          <li style="margin-bottom: 0.5rem;">Sound design workflows</li>
+          <li style="margin-bottom: 0.5rem;">Plugin deep dives</li>
+        </ul>
+        <p style="margin-top: 1.5rem;">Check back soon for updates!</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>© 2025 BabyHooligan</div>
+    <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
+      <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 576 512" class="youtube-icon">
+        <path d="M549.7 124.1c-6.3-24-25.1-42.8-49-49.1C457.5 64 288 64 288 64s-169.5 0-212.7 11c-23.9 6.3-42.7 25.1-49 49.1C16 168.3 16 256 16 256s0 87.7 10.3 131.9c6.3 24 25.1 42.8 49 49.1C118.5 448 288 448 288 448s169.5 0 212.7-11c23.9-6.3 42.7-25.1 49-49.1C560 343.7 560 256 560 256s0-87.7-10.3-131.9zM232 336V176l142 80-142 80z"/>
+      </svg>
+    </a>
+  </footer>
+
+  <script>
+    // Плавный хедер при скролле (как на других страницах)
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Анимация появления контента
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('h1, h2, p, li');
+      elements.forEach((el, index) => {
+        el.style.animationDelay = `${0.2 + index * 0.1}s`;
+      });
+    });
+  </script>
+</body>
+</html>
