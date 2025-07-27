@@ -6,14 +6,96 @@
   <meta name="theme-color" content="#1a1a1a">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Reverb/Delay Bible | BabyHooligan</title>
-  <meta name="description" content="Professional sound design guides for reverb and delay effects">
+  <meta name="description" content="Reverb and Delay Bible: description of reverb and delay, history about old music gear, interesting facts about producing music, interesting music stories and more">
   <link rel="canonical" href="https://babyhooligan.com/reverb-delay-bible" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dubtechno777/website/main/assets/favicon.png" />
+  
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="Reverb/Delay Bible | BabyHooligan">
+  <meta property="og:description" content="Explore reverb and delay effects, vintage gear history, and fascinating music production stories">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://babyhooligan.com/reverb-delay-bible">
+  <meta property="og:image" content="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Accordion styles */
+    .accordion {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--table-bg);
+      border-radius: var(--ui-radius);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .accordion-item {
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .accordion-item:last-child {
+      border-bottom: none;
+    }
+    
+    .accordion-header {
+      padding: 1.2rem 1.5rem;
+      background: var(--table-bg);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    
+    .accordion-header:hover {
+      background: #333;
+    }
+    
+    .accordion-header h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+    
+    .accordion-icon {
+      transition: transform 0.3s;
+      font-size: 1.2rem;
+    }
+    
+    .accordion-content {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease;
+      background: #252525;
+    }
+    
+    .accordion-item.active .accordion-content {
+      padding: 1.5rem;
+      max-height: 1000px;
+    }
+    
+    .accordion-item.active .accordion-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Article content styles */
+    .article-content {
+      line-height: 1.7;
+    }
+    
+    .reverb-type {
+      margin-bottom: 1.5rem;
+    }
+    
+    .reverb-type h4 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -28,19 +110,57 @@
   <main class="reverb-bible-main">
     <h1>Reverb/Delay Bible</h1>
     
-    <div class="reverb-bible-container">
-      <!-- Заглушка для будущего контента -->
-      <div style="background-color: var(--table-bg); border-radius: var(--ui-radius); padding: 2rem; margin-top: 1.5rem;">
-        <h2 style="color: var(--accent); margin-bottom: 1.5rem;">Coming Soon</h2>
-        <p>This section will contain professional guides about:</p>
-        <ul style="text-align: left; max-width: 500px; margin: 1rem auto; padding-left: 1.5rem;">
-          <li style="margin-bottom: 0.5rem;">Reverb time calculation techniques</li>
-          <li style="margin-bottom: 0.5rem;">Advanced delay timing</li>
-          <li style="margin-bottom: 0.5rem;">Sound design workflows</li>
-          <li style="margin-bottom: 0.5rem;">Plugin deep dives</li>
-        </ul>
-        <p style="margin-top: 1.5rem;">Check back soon for updates!</p>
+    <div class="accordion">
+      <!-- Article 1 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>What is reverb?</h3>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="article-content">
+            <p>Reverberation is an effect where a sound continues to reverberate after its source has been amplified, due to multiple reflections from room reflections. These reflections interact with each other and gradually fade away, creating a sense of surround sound. In simple terms, it is an "echo" effect, but in a faster, more cohesive form.</p>
+          </div>
+        </div>
       </div>
+      
+      <!-- Article 2 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Different types of reverbs</h3>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="article-content">
+            <div class="reverb-type">
+              <h4>Room</h4>
+              <p>Simulates reflections in small spaces such as rooms, studios. Provides an intimate, natural sound with relatively short decay times.</p>
+            </div>
+            
+            <div class="reverb-type">
+              <h4>Plate</h4>
+              <p>Creates a reverberation effect by simulating the sound of old electromechanical devices in which the sound passed through a metal plate. It is characterized by a bright, dense and slightly metallic tone, with a fast initial dispersion and a smooth decay.</p>
+            </div>
+            
+            <div class="reverb-type">
+              <h4>Spring</h4>
+              <p>Simulates the reverb created by the vibration of a spring, often used in guitar amplifiers. Has a distinctive "boingy" character with metallic overtones.</p>
+            </div>
+            
+            <div class="reverb-type">
+              <h4>Digital</h4>
+              <p>Created using computer algorithms, simulating various acoustic spaces, or using ready-made samples. Offers the most flexibility and clean sound.</p>
+            </div>
+            
+            <div class="reverb-type">
+              <h4>Convolution</h4>
+              <p>A type of digital audio processing that uses impulse responses (IR) to create realistic reverberation sounds by simulating the acoustics of various real-world spaces. Captures the exact sonic characteristics of famous venues and spaces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Placeholder for future articles -->
     </div>
   </main>
 
@@ -54,15 +174,37 @@
   </footer>
 
   <script>
-    // Плавный хедер при скролле (как на других страницах)
+    // Accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const headers = document.querySelectorAll('.accordion-header');
+      
+      headers.forEach(header => {
+        header.addEventListener('click', function() {
+          const item = this.parentElement;
+          const isActive = item.classList.contains('active');
+          
+          // Close all items
+          document.querySelectorAll('.accordion-item').forEach(i => {
+            i.classList.remove('active');
+          });
+          
+          // Open clicked item if it was closed
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+    });
+
+    // Header scroll effect
     window.addEventListener('scroll', () => {
       const header = document.querySelector('header');
       header.classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // Анимация появления контента
+    // Content animation
     document.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('h1, h2, p, li');
+      const elements = document.querySelectorAll('h1, h3, h4, p');
       elements.forEach((el, index) => {
         el.style.animationDelay = `${0.2 + index * 0.1}s`;
       });
