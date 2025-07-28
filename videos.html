@@ -16,14 +16,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-  <nav class="header-left" aria-label="Main navigation">
-    <a href="/"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="BabyHooligan Logo" class="logo" loading="lazy"></a>
-    <a href="delay-reverb-time-calculator.html" class="nav-link">Calculator</a>
-    <a href="reverb-delay-bible.html" class="nav-link">Reverb/Delay Bible</a>
-    <a href="videos.html" class="nav-link">Videos</a>
-  </nav>
-  </header>
+  <!-- Заменяем старый хедер на контейнер -->
+  <div id="header-container"></div>
 
   <main class="videos-main">
     <h1>Videos</h1>
@@ -42,5 +36,26 @@
       </svg>
     </a>
   </footer>
+
+  <script>
+  // Ждём полной загрузки страницы
+  window.addEventListener('DOMContentLoaded', function() {
+    // Загружаем header.html
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+        
+        // Вешаем обработчик клика ПОСЛЕ загрузки хедера
+        const burger = document.getElementById('burger-button');
+        const menu = document.getElementById('main-nav');
+        
+        burger?.addEventListener('click', function() {
+          menu.classList.toggle('active');
+        });
+      })
+      .catch(error => console.error('Ошибка загрузки header.html:', error));
+  });
+</script>
 </body>
 </html>
