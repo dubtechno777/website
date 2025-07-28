@@ -110,8 +110,8 @@ main {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   opacity: 0.6;
   transition: opacity 0.3s;
   z-index: 0;
