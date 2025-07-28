@@ -1,0 +1,42 @@
+<header>
+  <div class="header-left">
+    <a href="index.html">
+      <img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" class="logo" alt="Logo">
+    </a>
+    <button class="menu-toggle" aria-label="Menu" id="burger-button">☰</button>
+    <nav class="main-nav" id="main-nav">
+      <a href="delay-reverb-time-calculator.html" class="nav-link">Calculator</a>
+      <a href="reverb-delay-bible.html" class="nav-link">Reverb/Delay Bible</a>
+      <a href="videos.html" class="nav-link">Videos</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Стили для бургера (на всякий случай продублируем) */
+  .menu-toggle { display: none; }
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: var(--header-link);
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-left: auto;
+      padding: 0.5rem;
+    }
+    .main-nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: var(--header-bg);
+      padding: 1rem;
+    }
+    .main-nav.active { display: flex; }
+    .main-nav .nav-link {
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+  }
+</style>
