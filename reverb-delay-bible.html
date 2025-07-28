@@ -21,83 +21,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Accordion styles */
-    .accordion {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: var(--table-bg);
-      border-radius: var(--ui-radius);
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
-    }
-    
-    .accordion-item {
-      border-bottom: 1px solid var(--border);
-    }
-    
-    .accordion-item:last-child {
-      border-bottom: none;
-    }
-    
-    .accordion-header {
-      padding: 1.2rem 1.5rem;
-      background: var(--table-bg);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s;
-    }
-    
-    .accordion-header:hover {
-      background: #333;
-    }
-    
-    .accordion-header h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      color: var(--accent);
-    }
-    
-    .accordion-icon {
-      transition: transform 0.3s;
-      font-size: 1.2rem;
-    }
-    
-    .accordion-content {
-      padding: 0 1.5rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out, padding 0.3s ease;
-      background: #252525;
-    }
-    
-    .accordion-item.active .accordion-content {
-      padding: 1.5rem;
-      max-height: 1000px;
-    }
-    
-    .accordion-item.active .accordion-icon {
-      transform: rotate(45deg);
-    }
-
-    /* Article content styles */
-    .article-content {
-      line-height: 1.7;
-    }
-    
-    .reverb-type {
-      margin-bottom: 1.5rem;
-    }
-    
-    .reverb-type h4 {
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -112,12 +35,12 @@
   <main class="reverb-bible-main">
     <h1>Reverb/Delay Bible</h1>
     
-    <!-- Боковые картинки добавлены здесь -->
-    <div class="side-image left"></div>
-    <div class="side-image right"></div>
+    <div class="side-images-wrapper">
+      <div class="side-image left"></div>
+      <div class="side-image right"></div>
+    </div>
     
     <div class="accordion">
-      <!-- Article 1 -->
       <div class="accordion-item">
         <div class="accordion-header">
           <h3>What is reverb?</h3>
@@ -130,7 +53,6 @@
         </div>
       </div>
       
-      <!-- Article 2 -->
       <div class="accordion-item">
         <div class="accordion-header">
           <h3>Different types of reverbs</h3>
@@ -178,7 +100,6 @@
   </footer>
 
   <script>
-    // Accordion functionality
     document.addEventListener('DOMContentLoaded', function() {
       const headers = document.querySelectorAll('.accordion-header');
       
@@ -187,12 +108,10 @@
           const item = this.parentElement;
           const isActive = item.classList.contains('active');
           
-          // Close all items
           document.querySelectorAll('.accordion-item').forEach(i => {
             i.classList.remove('active');
           });
           
-          // Open clicked item if it was closed
           if (!isActive) {
             item.classList.add('active');
           }
@@ -200,13 +119,11 @@
       });
     });
 
-    // Header scroll effect
     window.addEventListener('scroll', () => {
       const header = document.querySelector('header');
       header.classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // Content animation
     document.addEventListener('DOMContentLoaded', () => {
       const elements = document.querySelectorAll('h1, h3, h4, p');
       elements.forEach((el, index) => {
