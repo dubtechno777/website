@@ -1,4 +1,3 @@
-/* styles.css */
 :root {
   --bg: #1a1a1a;
   --text: #eaeaea;
@@ -338,8 +337,7 @@ table tr:nth-child(5) { animation-delay: 0.9s; }
   }
 }
 
-/* Полностью замени стили аккордеона на эти */
-
+/* Новые стили аккордеона (полностью заменяют старые) */
 .accordion {
   max-width: 800px;
   margin: 2rem auto;
@@ -353,6 +351,10 @@ table tr:nth-child(5) { animation-delay: 0.9s; }
   border-bottom: 1px solid var(--border);
 }
 
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
 .accordion-header {
   padding: 1.2rem 1.5rem;
   background: var(--table-bg);
@@ -360,6 +362,11 @@ table tr:nth-child(5) { animation-delay: 0.9s; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: #333;
 }
 
 .accordion-header h3 {
@@ -369,30 +376,40 @@ table tr:nth-child(5) { animation-delay: 0.9s; }
 }
 
 .accordion-icon {
-  transition: transform 0.3s;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  font-size: 1.2rem;
 }
 
-/* Основной фикс */
 .accordion-content {
+  padding: 0 1.5rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out;
+  transition: 
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.3s ease;
+  background: #252525;
+  will-change: max-height;
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 80vh; /* Ограничиваем высоту */
-  overflow-y: auto; /* Добавляем скролл при необходимости */
-  padding: 0 1.5rem 1.5rem;
+  padding: 1.5rem;
+  max-height: 2000px;
 }
 
-/* Фикс для мобилок */
-@media (max-width: 768px) {
-  .accordion-item.active .accordion-content {
-    max-height: 60vh; /* Меньше высота на мобильных */
-    -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
-  }
-  
-  .accordion-content::-webkit-scrollbar {
-    width: 4px; /* Тонкий скроллбар */
-  }
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+/* Article content styles */
+.article-content {
+  line-height: 1.7;
+}
+
+.reverb-type {
+  margin-bottom: 1.5rem;
+}
+
+.reverb-type h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
 }
