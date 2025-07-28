@@ -1,11 +1,3 @@
 User-agent: *
 Allow: /
 Sitemap: https://babyhooligan.com/sitemap.xml
-
-# Для поисковых систем
-User-agent: Googlebot
-Disallow: /private/
-Allow: /assets/
-
-User-agent: Yandex
-Disallow: /temp/
