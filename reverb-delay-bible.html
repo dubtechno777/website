@@ -23,14 +23,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav class="header-left" aria-label="Main navigation">
-      <a href="index.html"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="BabyHooligan Logo" class="logo" loading="lazy"></a>
-      <a href="delay-reverb-time-calculator.html" class="nav-link">Calculator</a>
-      <a href="reverb-delay-bible.html" class="nav-link">Reverb/Delay Bible</a>
-      <a href="videos.html" class="nav-link">Videos</a>
-    </nav>
-  </header>
+  <!-- Заменяем старый хедер на этот контейнер -->
+  <div id="header-container"></div>
 
   <main class="reverb-bible-main">
     <h1>Reverb/Delay Bible</h1>
@@ -84,8 +78,6 @@
           </div>
         </div>
       </div>
-      
-      <!-- Placeholder for future articles -->
     </div>
   </main>
 
@@ -98,8 +90,8 @@
     </a>
   </footer>
 
+  <!-- Скрипт аккордеона -->
   <script>
-    // Улучшенный аккордеон с плавной анимацией
     document.addEventListener('DOMContentLoaded', function() {
       const headers = document.querySelectorAll('.accordion-header');
       
@@ -121,7 +113,6 @@
           // Открываем/закрываем текущий элемент
           if (!isActive) {
             item.classList.add('active');
-            // Устанавливаем точную высоту для плавного открытия
             content.style.maxHeight = content.scrollHeight + 'px';
             content.style.padding = '1.5rem';
           } else {
@@ -132,17 +123,43 @@
         });
       });
       
-      // Header scroll effect
-      window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        header.classList.toggle('scrolled', window.scrollY > 10);
-      });
-      
       // Content animation
       const elements = document.querySelectorAll('h1, h3, h4, p');
       elements.forEach((el, index) => {
         el.style.animationDelay = `${0.2 + index * 0.1}s`;
       });
+    });
+  </script>
+
+  <!-- Скрипт для загрузки хедера -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      // Загружаем header.html
+      fetch('header.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('header-container').innerHTML = html;
+          
+          // Назначаем обработчик клика на бургер
+          const burger = document.getElementById('burger-button');
+          const menu = document.getElementById('main-nav');
+          
+          if (burger && menu) {
+            burger.addEventListener('click', function() {
+              menu.classList.toggle('active');
+            });
+          }
+
+          // Скролл хедера
+          window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+          });
+        })
+        .catch(error => console.error('Error loading header:', error));
     });
   </script>
 </body>
