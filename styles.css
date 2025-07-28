@@ -385,7 +385,7 @@ table tr:nth-child(5) { animation-delay: 0.9s; }
   max-height: 0;
   overflow: hidden;
   transition: 
-    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    max-height 0.9s cubic-bezier(0.4, 0, 0.2, 1),
     padding 0.3s ease;
   background: #252525;
   will-change: max-height;
