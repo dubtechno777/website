@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#1a1a1a">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>BPM Calculator for Reverb & Delay | BabyHooligan</title>
-  <meta name="description" content="Free BPM-based reverb & delay calculator for music producers and mixing engineers">
-  <link rel="canonical" href="https://babyhooligan.com/delay-reverb-time-calculator" />
+  <title>Reverb/Delay Bible | BabyHooligan</title>
+  <meta name="description" content="Reverb and Delay Bible: description of reverb and delay, history about old music gear, interesting facts about producing music, interesting music stories and more">
+  <link rel="canonical" href="https://babyhooligan.com/reverb-delay-bible" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dubtechno777/website/main/assets/favicon.png" />
+  
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="Reverb/Delay Bible | BabyHooligan">
+  <meta property="og:description" content="Explore reverb and delay effects, vintage gear history, and fascinating music production stories">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://babyhooligan.com/reverb-delay-bible">
+  <meta property="og:image" content="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,155 +23,143 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-  <nav class="header-left" aria-label="Main navigation">
-    <a href="/"><img src="https://raw.githubusercontent.com/dubtechno777/website/main/assets/logo.png" alt="BabyHooligan Logo" class="logo" loading="lazy"></a>
-    <a href="delay-reverb-time-calculator.html" class="nav-link">Calculator</a>
-    <a href="reverb-delay-bible.html" class="nav-link">Reverb/Delay Bible</a>
-    <a href="videos.html" class="nav-link">Videos</a>
-  </nav>
-  </header>
+  <!-- Заменяем старый хедер на этот контейнер -->
+  <div id="header-container"></div>
 
-  <main class="calculator-main">
-    <section class="calculator-container">
-      <div class="bpm-control">
-        <label for="bpmInput">BPM</label>
-        <input id="bpmInput" type="number" min="1" max="300" value="120" />
-        <div class="bpm-loader" id="bpmLoader"></div>
+  <main class="reverb-bible-main">
+    <h1>Reverb/Delay Bible</h1>
+    
+    <div class="accordion">
+      <!-- Article 1 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>What is reverb?</h3>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="article-content">
+            <p>Reverberation is an effect where a sound continues to reverberate after its source has been amplified, due to multiple reflections from room reflections. These reflections interact with each other and gradually fade away, creating a sense of surround sound. In simple terms, it is an "echo" effect, but in a faster, more cohesive form.</p>
+          </div>
+        </div>
       </div>
-
-      <h1>Reverb Calculator</h1>
-      <section class="section">
-        <table>
-          <thead>
-            <tr>
-              <th>Reverb Size</th>
-              <th>Pre-delay</th>
-              <th>Decay Time</th>
-              <th>Total Reverb Time</th>
-            </tr>
-          </thead>
-          <tbody id="reverbTableBody"></tbody>
-        </table>
-      </section>
-
-      <h1>Delay Time Calculator</h1>
-      <section class="section">
-        <table>
-          <thead>
-            <tr>
-              <th>Note Value</th>
-              <th>Notes</th>
-              <th>Dotted</th>
-              <th>Triplets</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody"></tbody>
-        </table>
-      </section>
-    </section>
+      
+      <!-- Article 2 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Different types of reverbs</h3>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="article-content">
+            <div class="reverb-type">
+              <h4>Room</h4>
+              <p>Simulates reflections in small spaces such as rooms, studios. Provides an intimate, natural sound with relatively short decay times.</p>
+            </div>
+            
+            <div class="reverb-type">
+              <h4>Plate</h4>
+              <p>Creates a reverberation effect by simulating the sound of old electromechanical devices in which the sound passed through a metal plate. It is characterized by a bright, dense and slightly metallic tone, with a fast initial dispersion and a smooth decay.</p>
+            </div>
+            
+            <div class="reverb-type">
+              <h4>Spring</h4>
+              <p>Simulates the reverb created by the vibration of a spring, often used in guitar amplifiers. Has a distinctive "boingy" character with metallic overtones.</p>
+            </div>
+            
+            <div class="reverb-type">
+              <h4>Digital</h4>
+              <p>Created using computer algorithms, simulating various acoustic spaces, or using ready-made samples. Offers the most flexibility and clean sound.</p>
+            </div>
+            
+            <div class="reverb-type">
+              <h4>Convolution</h4>
+              <p>A type of digital audio processing that uses impulse responses (IR) to create realistic reverberation sounds by simulating the acoustics of various real-world spaces. Captures the exact sonic characteristics of famous venues and spaces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
     <div>© 2025 BabyHooligan</div>
-    <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+    <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
       <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 576 512" class="youtube-icon">
-        <path d="M549.7 124.1c-6.3-24-25.1-42.8-49-49.1C457.5 64 288 64 288 64s-169.5 0-212.7 11C51.4 81.3 32.6 100.1 26.3 124.1 16 168.3 16 256 16 256s0 87.7 10.3 131.9c6.3 24 25.1 42.8 49 49.1C118.5 448 288 448 288 448s169.5 0 212.7-11c23.9-6.3 42.7-25.1 49-49.1C560 343.7 560 256 560 256s0-87.7-10.3-131.9zM232 336V176l142 80-142 80z"/>
+        <path d="M549.7 124.1c-6.3-24-25.1-42.8-49-49.1C457.5 64 288 64 288 64s-169.5 0-212.7 11c-23.9 6.3-42.7 25.1-49 49.1C16 168.3 16 256 16 256s0 87.7 10.3 131.9c6.3 24 25.1 42.8 49 49.1C118.5 448 288 448 288 448s169.5 0 212.7-11c23.9-6.3 42.7-25.1 49-49.1C560 343.7 560 256 560 256s0-87.7-10.3-131.9zM232 336V176l142 80-142 80z"/>
       </svg>
     </a>
   </footer>
 
+  <!-- Скрипт аккордеона -->
   <script>
-    const bpmInput = document.getElementById('bpmInput');
-    const tableBody = document.getElementById('tableBody');
-    const reverbTableBody = document.getElementById('reverbTableBody');
-    const loader = document.getElementById('bpmLoader');
-
-    const notes = ["1/1", "1/2", "1/4", "1/8", "1/16", "1/32"];
-    const reverbSizes = [
-      { name: "Hall", preDelayBeats: 0.125, decayBeats: 7.875 },
-      { name: "Large Room", preDelayBeats: 0.0625, decayBeats: 3.875 },
-      { name: "Small Room", preDelayBeats: 0.03125, decayBeats: 1.53125 },
-      { name: "Tight Ambience", preDelayBeats: 0.0078125, decayBeats: 0.4921875 }
-    ];
-
-    let timeoutId;
-    const debounceDelay = 300;
-
-    function formatHz(ms) {
-      const hz = 1000 / ms;
-      return `${hz.toFixed(2)} Hz`;
-    }
-
-    function updateDelayTable(bpm) {
-      tableBody.innerHTML = "";
-      notes.forEach(note => {
-        const [base, denom] = note.split("/").map(Number);
-        const beatFactor = base / denom;
-        const ms = (60000 / bpm) * (4 * beatFactor);
-        const dottedMs = ms * 1.5;
-        const tripletMs = (ms * 2) / 3;
-
-        tableBody.innerHTML += `
-          <tr>
-            <td>${note}</td>
-            <td>${ms.toFixed(1)} ms / ${formatHz(ms)}</td>
-            <td>${dottedMs.toFixed(1)} ms / ${formatHz(dottedMs)}</td>
-            <td>${tripletMs.toFixed(1)} ms / ${formatHz(tripletMs)}</td>
-          </tr>`;
-      });
-    }
-
-    function updateReverbTable(bpm) {
-      reverbTableBody.innerHTML = "";
-      const beatMs = 60000 / bpm;
-      reverbSizes.forEach(size => {
-        const pre = size.preDelayBeats * beatMs;
-        const decay = size.decayBeats * beatMs;
-        const total = pre + decay;
-        reverbTableBody.innerHTML += `
-          <tr>
-            <td>${size.name}</td>
-            <td>${pre.toFixed(2)} ms</td>
-            <td>${decay.toFixed(2)} ms</td>
-            <td>${total.toFixed(2)} ms</td>
-          </tr>`;
-      });
-    }
-
-    function updateTables() {
-      const bpm = Number(bpmInput.value);
-      if (!bpm || bpm < 1) return;
+    document.addEventListener('DOMContentLoaded', function() {
+      const headers = document.querySelectorAll('.accordion-header');
       
-      loader.style.opacity = '1';
-      tableBody.style.opacity = '0';
-      reverbTableBody.style.opacity = '0';
-      
-      setTimeout(() => {
-        updateDelayTable(bpm);
-        updateReverbTable(bpm);
-        
-        setTimeout(() => {
-          loader.style.opacity = '0';
-          tableBody.style.opacity = '1';
-          reverbTableBody.style.opacity = '1';
+      headers.forEach(header => {
+        header.addEventListener('click', function() {
+          const item = this.parentElement;
+          const isActive = item.classList.contains('active');
+          const content = item.querySelector('.accordion-content');
           
-          document.querySelectorAll('table tr').forEach((row, index) => {
-            row.style.animationDelay = `${index * 0.1}s`;
+          // Закрываем все элементы
+          document.querySelectorAll('.accordion-item').forEach(i => {
+            if (i !== item) {
+              i.classList.remove('active');
+              i.querySelector('.accordion-content').style.maxHeight = '0';
+              i.querySelector('.accordion-content').style.padding = '0 1.5rem';
+            }
           });
-        }, 50);
-      }, debounceDelay);
-    }
+          
+          // Открываем/закрываем текущий элемент
+          if (!isActive) {
+            item.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.padding = '1.5rem';
+          } else {
+            item.classList.remove('active');
+            content.style.maxHeight = '0';
+            content.style.padding = '0 1.5rem';
+          }
+        });
+      });
+      
+      // Content animation
+      const elements = document.querySelectorAll('h1, h3, h4, p');
+      elements.forEach((el, index) => {
+        el.style.animationDelay = `${0.2 + index * 0.1}s`;
+      });
+    });
+  </script>
 
-    bpmInput.addEventListener('input', updateTables);
-    
-    // Инициализация при загрузке
-    updateTables();
-    
-    // Плавный хедер при скролле
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 10);
+  <!-- Скрипт для загрузки хедера -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      // Загружаем header.html
+      fetch('header.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('header-container').innerHTML = html;
+          
+          // Назначаем обработчик клика на бургер
+          const burger = document.getElementById('burger-button');
+          const menu = document.getElementById('main-nav');
+          
+          if (burger && menu) {
+            burger.addEventListener('click', function() {
+              menu.classList.toggle('active');
+            });
+          }
+
+          // Скролл хедера
+          window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+          });
+        })
+        .catch(error => console.error('Error loading header:', error));
     });
   </script>
 </body>
