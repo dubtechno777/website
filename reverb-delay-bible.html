@@ -30,6 +30,8 @@
       border-radius: var(--ui-radius);
       overflow: hidden;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
     
     .accordion-item {
@@ -110,6 +112,10 @@
   <main class="reverb-bible-main">
     <h1>Reverb/Delay Bible</h1>
     
+    <!-- Боковые картинки добавлены здесь -->
+    <div class="side-image left"></div>
+    <div class="side-image right"></div>
+    
     <div class="accordion">
       <!-- Article 1 -->
       <div class="accordion-item">
@@ -159,8 +165,6 @@
           </div>
         </div>
       </div>
-      
-      <!-- Placeholder for future articles -->
     </div>
   </main>
 
