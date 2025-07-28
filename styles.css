@@ -102,6 +102,41 @@ header.scrolled {
 /* Main Content */
 main {
   flex: 1;
+  position: relative;
+}
+
+/* Side images styles */
+.side-image {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.side-image:hover {
+  opacity: 1;
+}
+
+.side-image.left {
+  left: 20px;
+  background: url('https://raw.githubusercontent.com/dubtechno777/website/main/assets/lexicon480.webp') no-repeat center center;
+  background-size: contain;
+}
+
+.side-image.right {
+  right: 20px;
+  background: url('https://raw.githubusercontent.com/dubtechno777/website/main/assets/roland201.webp') no-repeat center center;
+  background-size: contain;
+}
+
+@media (max-width: 1100px) {
+  .side-image {
+    display: none;
+  }
 }
 
 /* Page-specific styles */
@@ -112,6 +147,8 @@ main {
   margin: 2rem auto;
   padding: 0 1.5rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .reverb-bible-container {
@@ -347,6 +384,8 @@ table tr:nth-child(5) { animation-delay: 0.9s; }
   border-radius: var(--ui-radius);
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .accordion-item {
