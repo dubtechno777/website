@@ -467,6 +467,11 @@ table tr:nth-child(5) { animation-delay: 0.9s; }
   margin-bottom: 0.5rem;
 }
 
+.reverb-type-title {
+  color: var(--accent); /* #ffd60a */
+  margin-bottom: 0.5rem;
+}
+
 /* Бургер-меню для мобилок */
 @media (max-width: 768px) {
   .menu-toggle {
