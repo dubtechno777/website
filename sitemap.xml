@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Главная страница -->
   <url>
     <loc>https://babyhooligan.com/</loc>
     <lastmod>2025-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Калькулятор (новая версия) -->
   <url>
-    <loc>https://babyhooligan.com/delay-reverb-time-calculator</loc>
-    <lastmod>2025-07-30</lastmod>
+    <loc>https://babyhooligan.com/reverb-delay-time-calculator/</loc>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- Видео -->
   <url>
-    <loc>https://babyhooligan.com/reverb-delay-bible</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://babyhooligan.com/videos</loc>
-    <lastmod>2025-07-30</lastmod>
+    <loc>https://babyhooligan.com/videos/</loc>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
