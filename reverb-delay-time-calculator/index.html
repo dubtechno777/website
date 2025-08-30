@@ -3,86 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#1a1a1a" />
+  <meta name="theme-color" content="#000" />
   <title>Reverb & Delay Time Calculator | Free BPM Music Tool — BabyHooligan</title>
-  <meta name="description" content="Free BPM-based reverb & delay calculator for music producers. Get precise timing instantly and make your mixes sound professional.">
-  <link rel="canonical" href="https://babyhooligan.com/reverb-delay-time-calculator" />
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dubtechno777/website/main/assets/favicon.png" />
+  <meta name="description" content="Reverb & delay calculator for music producers. Free BPM-Based Tool. Get precise timing instantly and make your mixes sound professional." />
+  <link rel="canonical" href="https://babyhooligan.com/reverb-delay-time-calculator/" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css" />
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <a href="/" aria-label="BabyHooligan Home">
-        <img src="/assets/logo.png" alt="BabyHooligan Logo" class="logo" />
-      </a>
-      <button class="menu-toggle" aria-label="Menu" id="burger-button">☰</button>
-      <nav class="main-nav" id="main-nav">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-wrapper">
+        <a href="/" class="logo"><img src="../assets/logo.png" alt="BabyHooligan Logo" /></a>
+        <a href="/" class="brand-link">BABYHOOLIGAN.COM</a>
+      </div>
+      <nav class="main-nav">
         <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
-        <a href="/videos" class="nav-link">Videos</a>
+        <a href="/tutorials" class="nav-link">Tutorials</a>
       </nav>
+      <button class="menu-toggle" id="burger-button">☰</button>
     </div>
   </header>
 
-  <main class="calculator-main">
-    <div class="calculator-container">
-      <div class="bpm-control">
-        <label for="bpmInput">BPM</label>
-        <input id="bpmInput" type="number" min="1" max="300" value="120" />
-        <div class="bpm-loader" id="bpmLoader"></div>
+  <!-- BURGER MENU -->
+  <div class="burger-menu" id="burger-menu">
+    <div class="burger-menu-content">
+      <button class="burger-close" id="burger-close">✕</button>
+      <div class="burger-logo">
+        <a href="/" class="burger-logo-link">
+          <img src="../assets/logo.png" alt="BabyHooligan Logo" />
+        </a>
       </div>
-
-      <div class="calculator-section">
-        <h2 class="section-title">Reverb Calculator</h2>
-        <div class="table-container">
-          <table class="calculator-table">
-            <thead>
-              <tr>
-                <th>Reverb Size</th>
-                <th>Pre-delay</th>
-                <th>Decay Time</th>
-                <th>Total Reverb Time</th>
-              </tr>
-            </thead>
-            <tbody id="reverbTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="calculator-section">
-        <h2 class="section-title">Delay Time Calculator</h2>
-        <div class="table-container">
-          <table class="calculator-table">
-            <thead>
-              <tr>
-                <th>Note Value</th>
-                <th>Notes</th>
-                <th>Dotted</th>
-                <th>Triplets</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody"></tbody>
-          </table>
-        </div>
+      <nav class="burger-nav">
+        <a href="/" class="burger-nav-link">Home</a>
+        <a href="/reverb-delay-time-calculator" class="burger-nav-link">Reverb-Delay Calculator</a>
+        <a href="/tutorials" class="burger-nav-link">Tutorials</a>
+      </nav>
+      <div class="burger-button">
+        <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" class="button-link">
+          <img src="../assets/youtube-icon.svg" alt="YouTube" />
+        </a>
       </div>
     </div>
+  </div>
+  
+  <!-- CALCULATOR -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="content-wrapper">
+          <h1 class="section-title">Delay & Reverb Time Calculator</h1>
+          <p class="section-description">
+            Enter your BPM to calculate precise delay and reverb times for your music production.
+          </p>
+          <div class="content-wrapper">
+            <input type="number" id="bpmInput" class="bpm-input" value="120" min="1" />
+          </div>
+
+          <!-- Reverb -->
+          <div class="content-wrapper">
+            <h2 class="section-title">Reverb Calculator</h2>
+            <table class="calculator-table">
+              <thead>
+                <tr>
+                  <th>Reverb Size</th>
+                  <th>Pre-Delay</th>
+                  <th>Decay Time</th>
+                  <th>Total Reverb Time</th>
+                </tr>
+              </thead>
+              <tbody id="reverbTableBody">
+                <!-- JS will populate -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Delay -->
+          <div class="content-wrapper">
+            <h2 class="section-title">Delay Calculator</h2>
+            <table class="calculator-table">
+              <thead>
+                <tr>
+                  <th>Note Value</th>
+                  <th>Notes</th>
+                  <th>Dotted</th>
+                  <th>Triplets</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- JS will populate -->
+              </tbody>
+            </table>
+          </div>
+
+          <div id="bpmLoader" class="section-description">Calculating...</div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <div>© 2025 BabyHooligan</div>
-    <a href="https://youtube.com/@baby.hooligan?si=PHZCx66GTvvhCtpt" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-      <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 576 512" class="youtube-icon">
-        <path d="M549.7 124.1c-6.3-24-25.1-42.8-49-49.1C457.5 64 288 64 288 64s-169.5 0-212.7 11c-23.9 6.3-42.7 25.1-49 49.1C16 168.3 16 256 16 256s0 87.7 10.3 131.9c6.3 24 25.1 42.8 49 49.1C118.5 448 288 448 288 448s169.5 0 212.7-11c23.9-6.3 42.7-25.1 49-49.1C560 343.7 560 256 560 256s0-87.7-10.3-131.9zM232 336V176l142 80-142 80z"/>
-      </svg>
-    </a>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-text">© 2025 BabyHooligan.com</div>
+    </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <script>
-    // Ваш скрипт калькулятора остаётся без изменений
+    const burgerButton = document.getElementById("burger-button");
+    const burgerClose = document.getElementById("burger-close");
+    const burgerMenu = document.getElementById("burger-menu");
+    const body = document.body;
+    const mainNav = document.querySelector(".main-nav");
+
+    
+    if (burgerButton && burgerMenu) {
+      burgerButton.addEventListener("click", () => {
+        if (mainNav && mainNav.classList.contains("active")) {
+          mainNav.classList.remove("active");
+        }
+        burgerMenu.classList.add("active");
+        body.style.overflow = "hidden";
+      });
+    }
+
+    if (burgerClose) {
+      burgerClose.addEventListener("click", () => {
+        burgerMenu.classList.remove("active");
+        body.style.overflow = "auto";
+      });
+    }
+
+    document.querySelectorAll('.burger-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerMenu.classList.remove("active");
+        body.style.overflow = "auto";
+      });
+    });
+
+    if (burgerMenu) {
+      burgerMenu.addEventListener('click', (e) => {
+        if (e.target === burgerMenu) {
+          burgerMenu.classList.remove("active");
+          body.style.overflow = "auto";
+        }
+      });
+    }
+
+    // ================= CALCULATOR =================
     const bpmInput = document.getElementById('bpmInput');
     const tableBody = document.getElementById('tableBody');
     const reverbTableBody = document.getElementById('reverbTableBody');
@@ -96,7 +171,6 @@
       { name: "Tight Ambience", preDelayBeats: 0.0078125, decayBeats: 0.4921875 }
     ];
 
-    let timeoutId;
     const debounceDelay = 300;
 
     function formatHz(ms) {
@@ -121,6 +195,8 @@
             <td>${tripletMs.toFixed(1)} ms / ${formatHz(tripletMs)}</td>
           </tr>`;
       });
+
+      animateRows(tableBody);
     }
 
     function updateReverbTable(bpm) {
@@ -138,43 +214,36 @@
             <td>${total.toFixed(2)} ms</td>
           </tr>`;
       });
+
+      animateRows(reverbTableBody);
+    }
+
+    function animateRows(tbody) {
+      tbody.querySelectorAll('tr').forEach((row, index) => {
+        row.style.animationDelay = `${index * 0.1}s`;
+      });
     }
 
     function updateTables() {
       const bpm = Number(bpmInput.value);
       if (!bpm || bpm < 1) return;
-      
+
       loader.style.opacity = '1';
-      tableBody.style.opacity = '0';
-      reverbTableBody.style.opacity = '0';
-      
+
       setTimeout(() => {
         updateDelayTable(bpm);
         updateReverbTable(bpm);
-        
+
         setTimeout(() => {
           loader.style.opacity = '0';
-          tableBody.style.opacity = '1';
-          reverbTableBody.style.opacity = '1';
-          
-          document.querySelectorAll('table tr').forEach((row, index) => {
-            row.style.animationDelay = `${index * 0.1}s`;
-          });
-        }, 50);
+        }, 100);
       }, debounceDelay);
     }
 
-    bpmInput.addEventListener('input', updateTables);
-    updateTables();
-  </script>
-
-  <script>
-    const burger = document.getElementById("burger-button");
-    const menu = document.getElementById("main-nav");
-
-    burger.addEventListener("click", () => {
-      menu.classList.toggle("active");
-    });
+    if (bpmInput && tableBody && reverbTableBody && loader) {
+      bpmInput.addEventListener('input', updateTables);
+      updateTables();
+    }
   </script>
 </body>
 </html>
