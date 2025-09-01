@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /assets/
+Crawl-delay: 1
 
 Sitemap: https://babyhooligan.com/sitemap.xml
