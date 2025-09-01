@@ -167,6 +167,18 @@ main {
   text-underline-offset: 4px;
 }
 
+.section-title.underline a {
+  color: inherit;
+  text-decoration: inherit;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.section-title.underline a:hover {
+  transform: translateY(-2px);
+  text-underline-offset: 6px; 
+}
+
 /* ================= Buttons ================= */
 .button-link {
   display: inline-block;
@@ -760,4 +772,51 @@ main {
   .footer-text {
     font-size: 14px;
   }
+}
+
+.calculator-guide {
+  padding: 60px 0;
+  background: #0a0a0a;
+}
+
+.guide-step {
+  margin: 30px 0;
+}
+
+.guide-step h3 {
+  color: #FFEB4F;
+  font-family: var(--font-main);
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.tip {
+  background: rgba(255, 235, 79, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid #FFEB4F;
+}
+
+.examples-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.examples-table th,
+.examples-table td {
+  padding: 12px;
+  border: 1px solid #333;
+  text-align: left;
+}
+
+.examples-table th {
+  background: rgba(255, 235, 79, 0.1);
 }
