@@ -179,6 +179,17 @@ main {
   text-underline-offset: 6px; 
 }
 
+.calculator-title {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 36px; 
+  line-height: 1.2;
+  text-transform: none;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 /* ================= Buttons ================= */
 .button-link {
   display: inline-block;
@@ -646,6 +657,30 @@ main {
   
   .button-link {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .calculator-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calculator-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .calculator-title {
+    font-size: 20px;
   }
 }
 
