@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -21,7 +21,7 @@
     <div class="header-inner">
       <div class="logo-wrapper">
         <a href="/" class="logo"><img src="../assets/logo.png" alt="BabyHooligan Logo" /></a>
-        <a href="/" class="brand-link">BABYHOOLIGAN.COM</a>
+        <a href="/" class="brand-link">BABYHOOLIGAN</a>
       </div>
       <nav class="main-nav">
         <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
@@ -101,8 +101,6 @@
               </tbody>
             </table>
           </div>
-
-          <div id="bpmLoader" class="section-description">Calculating...</div>
         </div>
       </div>
     </section>
@@ -117,6 +115,7 @@
 
   <!-- SCRIPTS -->
   <script>
+    // ================= BURGER MENU =================
     const burgerButton = document.getElementById("burger-button");
     const burgerClose = document.getElementById("burger-close");
     const burgerMenu = document.getElementById("burger-menu");
@@ -161,9 +160,8 @@
     const bpmInput = document.getElementById('bpmInput');
     const tableBody = document.getElementById('tableBody');
     const reverbTableBody = document.getElementById('reverbTableBody');
-    const loader = document.getElementById('bpmLoader');
 
-    const notes = ["1/1", "1/2", "1/4", "1/8", "1/16", "1/32"];
+    const notes = ["1/1", "1/2", "1/4", "1/8", "1/16", "1/32", "1/64", "1/128"];
     const reverbSizes = [
       { name: "Hall", preDelayBeats: 0.125, decayBeats: 7.875 },
       { name: "Large Room", preDelayBeats: 0.0625, decayBeats: 3.875 },
@@ -180,7 +178,9 @@
 
     function updateDelayTable(bpm) {
       tableBody.innerHTML = "";
-      notes.forEach(note => {
+      tableBody.style.opacity = '0';
+      
+      notes.forEach((note, index) => {
         const [base, denom] = note.split("/").map(Number);
         const beatFactor = base / denom;
         const ms = (60000 / bpm) * (4 * beatFactor);
@@ -188,7 +188,7 @@
         const tripletMs = (ms * 2) / 3;
 
         tableBody.innerHTML += `
-          <tr>
+          <tr style="animation-delay: ${index * 0.1}s">
             <td>${note}</td>
             <td>${ms.toFixed(1)} ms / ${formatHz(ms)}</td>
             <td>${dottedMs.toFixed(1)} ms / ${formatHz(dottedMs)}</td>
@@ -196,18 +196,23 @@
           </tr>`;
       });
 
-      animateRows(tableBody);
+      setTimeout(() => {
+        tableBody.style.opacity = '1';
+      }, 100);
     }
 
     function updateReverbTable(bpm) {
       reverbTableBody.innerHTML = "";
+      reverbTableBody.style.opacity = '0';
+      
       const beatMs = 60000 / bpm;
-      reverbSizes.forEach(size => {
+      reverbSizes.forEach((size, index) => {
         const pre = size.preDelayBeats * beatMs;
         const decay = size.decayBeats * beatMs;
         const total = pre + decay;
+        
         reverbTableBody.innerHTML += `
-          <tr>
+          <tr style="animation-delay: ${index * 0.1}s">
             <td>${size.name}</td>
             <td>${pre.toFixed(2)} ms</td>
             <td>${decay.toFixed(2)} ms</td>
@@ -215,34 +220,24 @@
           </tr>`;
       });
 
-      animateRows(reverbTableBody);
-    }
-
-    function animateRows(tbody) {
-      tbody.querySelectorAll('tr').forEach((row, index) => {
-        row.style.animationDelay = `${index * 0.1}s`;
-      });
+      setTimeout(() => {
+        reverbTableBody.style.opacity = '1';
+      }, 100);
     }
 
     function updateTables() {
       const bpm = Number(bpmInput.value);
       if (!bpm || bpm < 1) return;
 
-      loader.style.opacity = '1';
-
       setTimeout(() => {
         updateDelayTable(bpm);
         updateReverbTable(bpm);
-
-        setTimeout(() => {
-          loader.style.opacity = '0';
-        }, 100);
       }, debounceDelay);
     }
 
-    if (bpmInput && tableBody && reverbTableBody && loader) {
+    if (bpmInput && tableBody && reverbTableBody) {
       bpmInput.addEventListener('input', updateTables);
-      updateTables();
+      updateTables(); // Initialize on load
     }
   </script>
 </body>
