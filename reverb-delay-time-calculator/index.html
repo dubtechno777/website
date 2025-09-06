@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -54,57 +54,89 @@
   </div>
   
   <!-- CALCULATOR -->
-  <main>
-    <section class="section">
-      <div class="container">
-        <div class="content-wrapper">
-          <h1 class="section-title">Delay & Reverb Time Calculator</h1>
-          <p class="section-description">
-            Enter your BPM to calculate precise reverb and delay times for your music production.
-          </p>
-          <div class="content-wrapper">
-            <input type="number" id="bpmInput" class="bpm-input" value="120" min="1" />
-          </div>
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="content-wrapper content-wrapper--center">
+        <h1 class="title-xl">Delay & Reverb Time Calculator</h1>
+        <p class="text-m">
+          Enter your BPM to calculate precise reverb and delay times for your music production.
+        </p>
+        
+        <input type="number" id="bpmInput" class="bpm-input" value="120" min="1" />
 
-          <!-- Reverb -->
-          <div class="content-wrapper">
-            <h2 class="section-title calculator-title">Reverb Calculator</h2>
-            <table class="calculator-table">
-              <thead>
-                <tr>
-                  <th>Reverb Size</th>
-                  <th>Pre-Delay</th>
-                  <th>Decay Time</th>
-                  <th>Total Reverb Time</th>
-                </tr>
-              </thead>
-              <tbody id="reverbTableBody">
-                <!-- JS will populate -->
-              </tbody>
-            </table>
-          </div>
+        <!-- Reverb -->
+        <h2 class="title-s">Reverb Calculator</h2>
+        <table class="calculator-table">
+          <thead>
+            <tr>
+              <th>Reverb Size</th>
+              <th>Pre-Delay</th>
+              <th>Decay Time</th>
+              <th>Total Reverb Time</th>
+            </tr>
+          </thead>
+          <tbody id="reverbTableBody">
+            <!-- JS will populate -->
+          </tbody>
+        </table>
 
-          <!-- Delay -->
-          <div class="content-wrapper">
-            <h2 class="section-title calculator-title">Delay Calculator</h2>
-            <table class="calculator-table">
-              <thead>
-                <tr>
-                  <th>Note Value</th>
-                  <th>Notes</th>
-                  <th>Dotted</th>
-                  <th>Triplets</th>
-                </tr>
-              </thead>
-              <tbody id="tableBody">
-                <!-- JS will populate -->
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <!-- Delay -->
+        <h2 class="title-s">Delay Calculator</h2>
+        <table class="calculator-table">
+          <thead>
+            <tr>
+              <th>Note Value</th>
+              <th>Notes</th>
+              <th>Dotted</th>
+              <th>Triplets</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- JS will populate -->
+          </tbody>
+        </table>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+<!-- WHY REVERB TIMING MATTERS -->
+<section class="section">
+  <div class="container">
+    <!-- Заголовок по центру -->
+    <div class="content-wrapper content-wrapper--center">
+      <h3 class="title-m">WHY REVERB TIMING MATTERS</h3>
+    </div>
+    
+    <div class="content-wrapper content-wrapper--left">
+      <p class="text-m">
+         Reverb is everywhere in music, and almost every professional producer uses it with the tempo of the track in mind. 
+         It’s not just about making things sound “big” or “spacey”—it’s about making them feel natural and connected to the rhythm. 
+         When reverb times follow the pulse of a song, the reflections move with the groove instead of clashing against it, and that’s what gives a mix polish and clarity.
+      </p>
+
+      <p class="text-m">  
+         In the real world, reverb is simply the sound of reflections in physical spaces. A voice in a small room dies away quickly, 
+         while the same voice in a cathedral lingers for seconds. Our ears are trained to recognize these patterns of delay and decay, 
+         and that’s why mixes with poorly timed reverb sound artificial—the acoustic “rules” that our brains expect aren’t being followed.
+      </p>
+
+      <p class="text-m">
+         To recreate this natural feeling in music production, two settings matter most: pre-delay and decay time. 
+         Pre-delay is the short pause before the reverb kicks in. It gives space for the original sound—like a vocal or a snare hit—to stay clear 
+         and upfront before the ambience takes over. Decay time is how long the reverb lasts, which shapes the size of the “room” you’re putting the sound in. 
+         Get it wrong, and the mix becomes muddy. Get it right, and the track breathes with depth and energy.
+      </p>
+
+      <p class="text-m">
+        A reverb calculator makes this process much easier. Instead of guessing, you get exact pre-delay and decay times based on the BPM of your project. 
+        It’s a solid starting point that keeps your reverb musical, clear, and in sync with the track. From there, you can tweak and shape it to fit your own style—but the foundation is already right.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
 
   <!-- FOOTER -->
   <footer class="footer">
