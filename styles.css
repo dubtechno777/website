@@ -112,6 +112,111 @@ main {
   cursor: pointer;
 }
 
+/* ================= TYPOGRPAPHY ================= */
+.title-xl {
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 92px;
+  line-height: 0.85;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title-l {
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 0.9;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.title-m {
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 0.95;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.title-s {
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.0;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.text-xl {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: -0.16px;
+  color: var(--description-color);
+  margin-bottom: 20px;
+}
+
+.text-l {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.16px;
+  color: var(--description-color);
+  margin-bottom: 20px;
+}
+
+.text-m {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.16px;
+  color: var(--description-color);
+  margin-bottom: 20px;
+}
+
+.text-s {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.16px;
+  color: var(--description-color);
+  margin-bottom: 20px;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: inherit;
+  text-decoration-color: var(--accent-color);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.text-decoration-underline:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  text-underline-offset: 6px;
+}
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
 /* ================= Sections ================= */
 .section {
   width: 100%;
@@ -130,58 +235,18 @@ main {
 .content-wrapper {
   max-width: 800px;
   margin: 0 auto 20px auto;
+}
+
+.content-wrapper--center {
   text-align: center;
 }
 
-.section-title {
-  font-family: var(--font-main);
-  font-weight: 800;
-  font-size: 92px;
-  line-height: 0.85;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-  color: var(--accent-color);
-  margin-bottom: 20px;
+.content-wrapper--left {
+  text-align: left;
 }
 
-.section-description {
-  font-family: var(--font-secondary);
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: -0.16px;
-  color: var(--description-color);
-  margin: 0 auto 20px auto;
-  max-width: 640px;
-  text-align: center;
-}
-
-.section-title.underline {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.section-title.underline a {
-  color: inherit;
-  text-decoration: inherit;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.section-title.underline a:hover {
-  transform: translateY(-2px);
-  text-underline-offset: 6px; 
-}
-
-.calculator-title {
-  font-family: var(--font-secondary);
-  font-weight: 300;
-  font-size: 36px; 
-  line-height: 1.2;
-  text-transform: none;
-  color: var(--accent-color);
-  margin-bottom: 20px;
-  text-align: center;
+.content-wrapper--right {
+  text-align: right;
 }
 
 /* ================= Buttons ================= */
@@ -249,7 +314,7 @@ main {
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
-  margin: 20px 0;
+  margin: 0 0 20px;
 }
 
 .bpm-input:focus {
@@ -337,11 +402,6 @@ main {
 .calculator-table tbody tr:nth-child(8) { animation-delay: 0.8s; }
 .calculator-table tbody tr:nth-child(9) { animation-delay: 0.9s; }
 .calculator-table tbody tr:nth-child(10) { animation-delay: 1.0s; }
-
-/* ================= Tutorials Section ================= */
-.tutorials-section {
-  padding-top: 120px;
-}
 
 /* ================= Footer ================= */
 .footer {
@@ -480,8 +540,6 @@ main {
   color: var(--accent-color);
 }
 
-
-
 .burger-button .button-link {
   display: flex;
   justify-content: center;
@@ -498,8 +556,7 @@ main {
   width: 52px;
   height: 52px;
 }
-
-/* ================= АДАПТИВ ================= */
+/***************************.  Adaptive.  ***************************/
 
 /* Main Adaptive */
 @media (max-width: 768px) {
@@ -577,31 +634,11 @@ main {
   .section {
     padding: 80px 32px;
   }
-  
-  .section-title {
-    font-size: 72px;
-  }
-  
-  .section-description {
-    font-size: 18px;
-    line-height: 22px;
-  }
 }
 
 @media (max-width: 768px) {
   .section {
     padding: 60px 24px;
-  }
-  
-  .section-title {
-    font-size: 56px;
-    line-height: 0.9;
-  }
-  
-  .section-description {
-    font-size: 16px;
-    line-height: 20px;
-    max-width: 500px;
   }
   
   .column-grid {
@@ -618,18 +655,43 @@ main {
   .section {
     padding: 40px 16px;
   }
+}
+
+/* ================= АДАПТИВ ТИПОГРАФИКИ ================= */
+@media (max-width: 1080px) {
+  .title-xl { font-size: 72px; }
+  .title-l { font-size: 56px; }
+  .title-m { font-size: 42px; }
+  .title-s { font-size: 36px; }
   
-  .section-title {
-    font-size: 42px;
-    line-height: 0.95;
-    margin-bottom: 16px;
-  }
+  .text-xl { font-size: 20px; }
+  .text-l { font-size: 18px; }
+  .text-m { font-size: 16px; }
+  .text-s { font-size: 14px; }
+}
+
+@media (max-width: 768px) {
+  .title-xl { font-size: 56px; }
+  .title-l { font-size: 42px; }
+  .title-m { font-size: 36px; }
+  .title-s { font-size: 32px; }
   
-  .section-description {
-    font-size: 15px;
-    line-height: 19px;
-    margin-bottom: 16px;
-  }
+  .text-xl { font-size: 18px; }
+  .text-l { font-size: 16px; }
+  .text-m { font-size: 15px; }
+  .text-s { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .title-xl { font-size: 42px; }
+  .title-l { font-size: 36px; }
+  .title-m { font-size: 32px; }
+  .title-s { font-size: 28px; }
+  
+  .text-xl { font-size: 16px; }
+  .text-l { font-size: 15px; }
+  .text-m { font-size: 14px; }
+  .text-s { font-size: 13px; }
   
   .button-link {
     font-size: 15px;
@@ -638,41 +700,18 @@ main {
 }
 
 @media (max-width: 360px) {
-  .section-title {
-    font-size: 36px;
-  }
+  .title-xl { font-size: 36px; }
+  .title-l { font-size: 32px; }
+  .title-m { font-size: 28px; }
+  .title-s { font-size: 24px; }
   
-  .section-description {
-    font-size: 14px;
-  }
+  .text-xl { font-size: 15px; }
+  .text-l { font-size: 14px; }
+  .text-m { font-size: 13px; }
+  .text-s { font-size: 12px; }
   
   .button-link {
     font-size: 14px;
-  }
-}
-
-/* Calculator Title Adaptive */
-@media (max-width: 1080px) {
-  .calculator-title {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 768px) {
-  .calculator-title {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .calculator-title {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 320px) {
-  .calculator-title {
-    font-size: 20px;
   }
 }
 
@@ -786,25 +825,25 @@ main {
 /* ================= Burger Menu Adaptive ================= */
 @media (max-width: 480px) {
   .burger-menu-content {
-    gap: 18px; /* Уменьшаем общий отступ */
-    max-width: 280px; /* Чуть уже */
+    gap: 18px;
+    max-width: 280px;
   }
   
   .burger-logo-link img {
-    height: 44px; /* Уменьшаем лого */
+    height: 44px;
   }
   
   .burger-nav {
-    gap: 10px; /* Уменьшаем отступы между ссылками */
+    gap: 10px;
   }
   
   .burger-nav-link {
-    font-size: 15px; /* Чуть меньше текст */
-    padding: 6px 0; /* Меньше отступы внутри ссылок */
+    font-size: 15px;
+    padding: 6px 0;
   }
   
   .burger-button .button-link img {
-    width: 44px; /* Уменьшаем иконку */
+    width: 44px;
     height: 44px;
   }
   
@@ -849,4 +888,3 @@ main {
     height: 32px;
   }
 }
-
