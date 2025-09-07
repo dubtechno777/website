@@ -221,7 +221,7 @@ main {
 .section {
   width: 100%;
   height: auto;
-  padding: 100px 40px;
+  padding: 80px 40px;
   transition: all 0.3s ease;
 }
 
