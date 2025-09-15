@@ -36,24 +36,29 @@ main {
   padding-top: 80px;
 }
 
-/* ================= Header ================= */
+/* ================= HEADER ================= */
 .header {
   position: fixed;
-  top: 0;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
-  background-color: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-  width: 100%;
-  padding: 0 40px; 
+  background-color: rgba(65, 60, 75, 0.9); /* Бархатный фиолетовый */
+  backdrop-filter: blur(4px);
+  width: calc(100% - 80px); 
+  max-width: 1360px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  padding: 0 20px; 
+  box-sizing: border-box; 
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  max-width: 1360px;
-  margin: 0 auto;
+  height: 64px;
+  width: 100%;
 }
 
 .logo-wrapper {
@@ -75,18 +80,12 @@ main {
   transform: scale(1.1); 
 }
 
-.brand-link {
-  font-family: var(--font-secondary);
-  font-weight: 400;
-  font-size: 16px;
-  text-transform: uppercase;
-  color: var(--text-color);
-  text-decoration: none;
-}
-
 .main-nav {
   display: flex;
-  gap: 24px;
+  gap: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {
@@ -97,6 +96,7 @@ main {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s;
+  padding: 8px 0;
 }
 
 .nav-link:hover {
@@ -274,7 +274,7 @@ main {
 }
 
 .button-link img[alt="YouTube"]:hover {
-  transform: scale(1.1); 
+  transform: scale(1.2); 
 }
 
 /* ================= Image blocks ================= */
@@ -295,11 +295,6 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-bottom: 20px;
-}
-
-.container.column-grid .image-block:hover img {
-  transform: translateY(-2px) scale(1.02);
-  border: 1px solid var(--accent-color);
 }
 
 /* ================= Calculator Elements ================= */
@@ -425,7 +420,7 @@ main {
 .footer-text {
   font-weight: 400;
   font-size: 16px;
-  color: var(--text-color);
+  color: rgb(255, 255, 255);
 }
 
 .footer::before {
