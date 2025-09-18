@@ -43,7 +43,7 @@ main {
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  background-color: rgba(103, 123, 119, 0.583);
+  background-color: rgba(87, 124, 110, 0.495);
   backdrop-filter: blur(4px);
   width: calc(100% - 80px);
   max-width: 1440px;
