@@ -1,4 +1,7 @@
+# robots.txt for BabyHooligan
+
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://babyhooligan.com/sitemap.xml
