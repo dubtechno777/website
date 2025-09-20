@@ -3,7 +3,7 @@
   --primary-color: #101010;
   --accent-color: #FFC848;
   --text-color: #FFFFFF;
-  --description-color: #909090;
+  --description-color: #d0d0d0;
   --font-main: 'Saira Extra Condensed', sans-serif;
   --font-secondary: "IBM Plex Sans", sans-serif;
 }
@@ -191,7 +191,7 @@ main {
   font-family: var(--font-secondary);
   font-weight: 300;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: -0.16px;
   color: var(--description-color);
   margin-bottom: 20px;
@@ -853,9 +853,9 @@ main {
   .title-s { font-size: 36px; }
   
   .text-xl { font-size: 20px; }
-  .text-l { font-size: 18px; }
-  .text-m { font-size: 16px; }
-  .text-s { font-size: 14px; }
+  .text-l  { font-size: 18px; }
+  .text-m  { font-size: 16px; }
+  .text-s  { font-size: 14px; }
 }
 
 @media (max-width: 768px) {
@@ -865,9 +865,9 @@ main {
   .title-s { font-size: 32px; }
   
   .text-xl { font-size: 18px; }
-  .text-l { font-size: 16px; }
-  .text-m { font-size: 15px; }
-  .text-s { font-size: 14px; }
+  .text-l  { font-size: 16px; }
+  .text-m  { font-size: 15px; }
+  .text-s  { font-size: 14px; } /* минимальный размер */
 }
 
 @media (max-width: 480px) {
@@ -876,10 +876,10 @@ main {
   .title-m { font-size: 32px; }
   .title-s { font-size: 28px; }
   
-  .text-xl { font-size: 16px; }
-  .text-l { font-size: 15px; }
-  .text-m { font-size: 14px; }
-  .text-s { font-size: 13px; }
+  .text-xl { font-size: 18px; }
+  .text-l  { font-size: 16px; }
+  .text-m  { font-size: 15px; }
+  .text-s  { font-size: 14px; } /* не меньше 14px для читаемости */
   
   .button-link {
     font-size: 15px;
@@ -893,15 +893,39 @@ main {
   .title-m { font-size: 28px; }
   .title-s { font-size: 24px; }
   
-  .text-xl { font-size: 15px; }
-  .text-l { font-size: 14px; }
-  .text-m { font-size: 13px; }
-  .text-s { font-size: 12px; }
+  .text-xl { font-size: 16px; }
+  .text-l  { font-size: 15px; }
+  .text-m  { font-size: 14px; } 
+  .text-s  { font-size: 14px; } /* минимальный размер 14px */
   
   .button-link {
     font-size: 14px;
   }
 }
+
+/* ================= FAQ TOGGLE ================= */
+.faq-item {
+  text-align: center;
+}
+
+.faq-item p {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+.faq-item.active p {
+  max-height: 500px;
+  padding: 10px 0 0 0;
+}
+
+.faq-item h4 {
+  cursor: pointer;
+}
+
 
 /* ================= АДАПТИВ КАЛЬКУЛЯТОРА ================= */
 @media (max-width: 1080px) {
