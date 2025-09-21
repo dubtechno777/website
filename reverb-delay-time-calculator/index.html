@@ -261,8 +261,8 @@
     
     <div class="content-wrapper content-wrapper--center">
 
-      <section class="faq-item" aria-labelledby="faq-q1" style="margin-bottom:30px;">
-        <h4 id="faq-q1" class="text-m" style="color: var(--accent-color); margin-bottom:10px;">
+      <section style="margin-bottom:30px;">
+        <h4 class="text-m" style="color: var(--accent-color); margin-bottom:10px;">
           What's the formula for BPM to MS?
         </h4>
         <p class="text-s">
@@ -270,8 +270,8 @@
         </p>
       </section>
 
-      <section class="faq-item" aria-labelledby="faq-q2" style="margin-bottom:30px;">
-        <h4 id="faq-q2" class="text-m" style="color: var(--accent-color); margin-bottom:10px;">
+      <section style="margin-bottom:30px;">
+        <h4 class="text-m" style="color: var(--accent-color); margin-bottom:10px;">
           How to set pre-delay for a tight mix?
         </h4>
         <p class="text-s">
@@ -279,8 +279,8 @@
         </p>
       </section>
 
-      <section class="faq-item" aria-labelledby="faq-q3" style="margin-bottom:30px;">
-        <h4 id="faq-q3" class="text-m" style="color: var(--accent-color); margin-bottom:10px;">
+      <section style="margin-bottom:30px;">
+        <h4 class="text-m" style="color: var(--accent-color); margin-bottom:10px;">
           How to sync hardware delays or older plugins?
         </h4>
         <p class="text-s">
@@ -288,8 +288,8 @@
         </p>
       </section>
 
-      <section class="faq-item" aria-labelledby="faq-q4" style="margin-bottom:30px;">
-        <h4 id="faq-q4" class="text-m" style="color: var(--accent-color); margin-bottom:10px;">
+      <section style="margin-bottom:30px;">
+        <h4 class="text-m" style="color: var(--accent-color); margin-bottom:10px;">
           My delay is set to 500ms. What's the BPM?
         </h4>
         <p class="text-s">
@@ -434,12 +434,4 @@
     bpmInput.addEventListener('input', updateTables);
     updateTables(); // Initialize on load
   }
-
-  // ================= FAQ TOGGLE =================
-  document.querySelectorAll('.faq-item h4').forEach(question => {
-    question.addEventListener('click', () => {
-      const parent = question.parentElement;
-      parent.classList.toggle('active');
-    });
-  });
 </script>
