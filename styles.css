@@ -396,28 +396,6 @@ main {
 .calculator-table tbody tr:nth-child(9) { animation-delay: 0.9s; }
 .calculator-table tbody tr:nth-child(10) { animation-delay: 1.s; }
 
-/* ================= FAQ TOGGLE ================= */
-.faq-item {
-  text-align: center;
-}
-
-.faq-item p {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0;
-  max-width: 600px;
-  margin: 0 auto 20px auto;
-}
-
-.faq-item.active p {
-  max-height: 500px;
-  padding: 10px 0 0 0;
-}
-
-.faq-item h4 {
-  cursor: pointer;
-}
 
 /* ================= Footer ================= */
 .footer {
