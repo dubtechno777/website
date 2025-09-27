@@ -1,145 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000" />
-  <title>BabyHooligan: Dub Techno Production Tools, Tutorials & Sound Design Resources</title>
-  <meta name="description" content="Free tools and tutorials for dub techno producers. BPM to MS calculator, sound design guides, and underground production techniques for Ableton and hardware." />
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://babyhooligan.com/" />
+
+  <!-- Title & Description -->
+  <title>Dub Techno Production Tutorials: Sound Design, Mixing & Studio Tips - BabyHooligan</title>
+  <meta name="description" content="Step-by-step dub techno production guides. Learn sound design, mixing techniques, and studio secrets for creating deep electronic music. Free tutorials." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://babyhooligan.com/tutorials/" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
-  
-  <!-- HEADER -->
-<header class="header">
-  <div class="header__container">
-    <div class="header-inner">
-      <div class="logo-wrapper">
-        <a href="/" class="logo"><img src="/assets/logo.png" alt="BabyHooligan - Music Production Tools and Tutorials" /></a>
-      </div>
-      <nav class="main-nav">
-        <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
-        <a href="/tutorials" class="nav-link">Tutorials</a>
-      </nav>
-      <button class="menu-toggle" id="burger-button">☰</button>
-    </div>
-  </div>
-</header>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap" 
+    rel="stylesheet"
+  />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" 
+    rel="stylesheet"
+  />
 
-  <!-- BURGER MENU -->
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- JSON-LD Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://babyhooligan.com/#website",
+        "url": "https://babyhooligan.com/",
+        "name": "BabyHooligan",
+        "description": "Music production tools, tutorials, and resources for producers of all music genres.",
+        "publisher": {
+          "@id": "https://babyhooligan.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://babyhooligan.com/tutorials/#webpage",
+        "url": "https://babyhooligan.com/tutorials/",
+        "name": "Dub Techno Production Tutorials",
+        "isPartOf": {
+          "@id": "https://babyhooligan.com/#website"
+        },
+        "description": "Step-by-step dub techno production guides, sound design tips, and studio secrets for creating deep electronic music.",
+        "inLanguage": "en",
+        "datePublished": "2025-09-27",
+        "dateModified": "2025-09-27"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://babyhooligan.com/#organization",
+        "name": "BabyHooligan",
+        "url": "https://babyhooligan.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://babyhooligan.com/assets/logo.png"
+        },
+        "sameAs": [
+          "https://youtube.com/@baby.hooligan"
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ======================== HEADER ======================== -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header-inner">
+        
+        <!-- Logo -->
+        <div class="logo-wrapper">
+          <a href="/" class="logo">
+            <img src="/assets/logo.png" alt="BabyHooligan - Music Production Tools and Tutorials" />
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav">
+          <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
+          <a href="/tutorials" class="nav-link">Tutorials</a>
+        </nav>
+
+        <!-- Burger Menu Button -->
+        <button class="menu-toggle" id="burger-button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================== BURGER MENU ======================== -->
   <div class="burger-menu" id="burger-menu">
     <div class="burger-menu-content">
+
+      <!-- Close Button -->
       <button class="burger-close" id="burger-close">✕</button>
+
+      <!-- Burger Logo -->
       <div class="burger-logo">
         <a href="/" class="burger-logo-link">
           <img src="/assets/logo.png" alt="BabyHooligan Logo" />
         </a>
       </div>
+
+      <!-- Burger Navigation -->
       <nav class="burger-nav">
         <a href="/" class="burger-nav-link">Home</a>
         <a href="/reverb-delay-time-calculator" class="burger-nav-link">Reverb-Delay Calculator</a>
         <a href="/tutorials" class="burger-nav-link">Tutorials</a>
       </nav>
+
+      <!-- YouTube Button -->
       <div class="burger-button">
-        <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" class="button-link">
+        <a 
+          href="https://youtube.com/@baby.hooligan" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="button-link"
+        >
           <img src="/assets/youtube-icon.svg" alt="YouTube" />
         </a>
       </div>
     </div>
   </div>
 
-
-   <!-- CALCULATOR -->
-<main>
-  <section class="section">
-    <div class="container">
-      <div class="content-wrapper content-wrapper--center">
-        <h1 class="title-xl">GET YOUR DELAY & REVERB RIGHT.</h1>
-        <p class="text-s">
-          A precise Delay & Reverb Time Calculator built for the groove-obsessed. Plus free tools, tutorials & raw sound knowledge from the dub trenches.
-        </p>
-        <a href="/reverb-delay-time-calculator" class="button-link">CALCULATE</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIDEO & TUTORIALS -->
-  <section class="section">
-    <div class="container">
-      <div class="content-wrapper content-wrapper--center">
-        <h2 class="title-xl">LEARN LIKE A HOOLIGAN. PLAY LIKE AN ARTIST.</h2>
-        <p class="text-s">
-          Short, honest, no-fluff videos that explain production concepts — from delay chains to drum shaping, from simple gear setups to sound design.
-        </p>
-      </div>
-      <div class="container column-grid">
-        <div class="image-block">
-          <img src="/assets/image-01.png" alt="Video Volume 1" />
-        </div>
-        <div class="image-block">
-          <img src="/assets/image-02.png" alt="Video Volume 2" />
+  <!-- ======================== MAIN CONTENT ======================== -->
+  <main>
+    <!-- Hero Section -->
+    <section class="section">
+      <div class="container">
+        <div class="content-wrapper content-wrapper--center">
+          <h1 class="title-xl">GET YOUR DELAY & REVERB RIGHT.</h1>
+          <p class="text-m">
+            A precise Delay & Reverb Time Calculator built for the groove-obsessed. 
+            Plus free tools, tutorials & raw sound knowledge from the dub trenches.
+          </p>
+          <a href="/reverb-delay-time-calculator" class="button-link">CALCULATE</a>
         </div>
       </div>
-      <div class="content-wrapper content-wrapper--center">
-        <a href="/tutorials" class="button-link">ALL VIDEOS</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section class="section">
-    <div class="container">
-      <div class="content-wrapper content-wrapper--center">
-        <h3 class="title-xl">BABYHOOLIGAN IS NOT A BRAND. IT'S A MOOD.</h3>
-        <p class="text-s">
-          Born in a bedroom. Inspired by foggy nights, long delays, and the Detroit spirit. No rush, no hype — just deep, textured sounds and a passion for sharing. Created by a producer who's learning in public — sharing the tools, wins, and mistakes along the way.
-        </p>
-      </div>
-      <div class="image-block">
-        <img src="/assets/background-06.webp" alt="Music Studio" />
-      </div>
-    </div>
-  </section>
+    <!-- Video & Tutorials Section -->
+    <section class="section">
+      <div class="container">
+        <div class="content-wrapper content-wrapper--center">
+          <h2 class="title-xl">LEARN LIKE A HOOLIGAN. PLAY LIKE AN ARTIST.</h2>
+          <p class="text-m">
+            Short, honest, no-fluff videos that explain production concepts — from delay chains 
+            to drum shaping, from simple gear setups to sound design.
+          </p>
+        </div>
 
-<!-- CONTRIBUTE -->
-<section class="section">
-  <div class="container">
-    <div class="content-wrapper content-wrapper--center">
-      <p class="text-s">Get updated with new videos</p>
-      <h4 class="title-xl">
-        <a href="https://youtube.com/@baby.hooligan" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="text-decoration-underline">
-          FOLLOW ME ON YOUTUBE
-        </a>
-      </h4>
-      <a href="https://youtube.com/@baby.hooligan" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="button-link">
-        <img src="/assets/youtube-icon.svg" alt="YouTube" />
-      </a>
-      <p class="text-s">Want to contribute?</p>
-      <a href="mailto:babyhooliganproject@gmail.com" class="button-link">GET IN TOUCH</a>
-    </div>
-  </div>
-</section>
+        <!-- Videos Preview -->
+        <div class="container column-grid">
+          <div class="image-block">
+            <img src="/assets/image-01.png" alt="Video Volume 1" />
+          </div>
+          <div class="image-block">
+            <img src="/assets/image-02.png" alt="Video Volume 2" />
+          </div>
+        </div>
 
-  <!-- FOOTER -->
+        <div class="content-wrapper content-wrapper--center">
+          <a href="/tutorials" class="button-link">ALL VIDEOS</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+      <div class="container">
+        <div class="content-wrapper content-wrapper--center">
+          <h3 class="title-xl">BABYHOOLIGAN IS NOT A BRAND. IT'S A MOOD.</h3>
+          <p class="text-m">
+            Born in a bedroom. Inspired by foggy nights, long delays, and the Detroit spirit. 
+            No rush, no hype — just deep, textured sounds and a passion for sharing. 
+            Created by a producer who's learning in public — sharing the tools, wins, and mistakes along the way.
+          </p>
+        </div>
+        <div class="image-block">
+          <img src="/assets/background-06.webp" alt="Music Studio" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contribute Section -->
+    <section class="section">
+      <div class="container">
+        <div class="content-wrapper content-wrapper--center">
+          <p class="text-m">Get updated with new videos</p>
+          <h4 class="title-xl">
+            <a 
+              href="https://youtube.com/@baby.hooligan" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-decoration-underline"
+            >
+              FOLLOW ME ON YOUTUBE
+            </a>
+          </h4>
+          <a 
+            href="https://youtube.com/@baby.hooligan" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="button-link"
+          >
+            <img src="/assets/youtube-icon.svg" alt="YouTube" />
+          </a>
+          <p class="text-m">Want to contribute?</p>
+          <a href="mailto:babyhooliganproject@gmail.com" class="button-link">GET IN TOUCH</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================== FOOTER ======================== -->
   <footer class="footer">
-  <div class="footer-inner"> 
-    <p class="footer-text">BABYHOOLIGAN 2025</p>
-  </div>
-</footer>
-  
+    <div class="footer-inner"> 
+      <p class="footer-text">BABYHOOLIGAN 2025</p>
+    </div>
+  </footer>
+
+  <!-- ======================== SCRIPTS ======================== -->
   <script>
     const burgerButton = document.getElementById("burger-button");
     const burgerClose = document.getElementById("burger-close");
@@ -147,7 +242,7 @@
     const body = document.body;
     const mainNav = document.querySelector(".main-nav");
 
-    
+    // Open burger menu
     if (burgerButton && burgerMenu) {
       burgerButton.addEventListener("click", () => {
         if (mainNav && mainNav.classList.contains("active")) {
@@ -158,6 +253,7 @@
       });
     }
 
+    // Close burger menu
     if (burgerClose) {
       burgerClose.addEventListener("click", () => {
         burgerMenu.classList.remove("active");
@@ -165,6 +261,7 @@
       });
     }
 
+    // Close menu on nav link click
     document.querySelectorAll('.burger-nav-link').forEach(link => {
       link.addEventListener('click', () => {
         burgerMenu.classList.remove("active");
@@ -172,6 +269,7 @@
       });
     });
 
+    // Close on outside click
     if (burgerMenu) {
       burgerMenu.addEventListener('click', (e) => {
         if (e.target === burgerMenu) {
@@ -183,3 +281,4 @@
   </script>
 </body>
 </html>
+```
