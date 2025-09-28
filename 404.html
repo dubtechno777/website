@@ -65,8 +65,51 @@
             object-fit: cover;
             display: block;
         }
+        /* ==================== ADAPTIVE ================== */
+        @media (max-width: 1024px) {
+        .error-overlay {
+        padding: 30px;
+        }
+        .error-overlay h1 {
+        font-size: 2rem;
+        }
+        .error-overlay p {
+        font-size: 1rem;
+        }
+        }
+
+        @media (max-width: 768px) {
+        .error-overlay {
+        padding: 20px;
+        }
+        .error-overlay h1 {
+        font-size: 1.6rem;
+        }
+        .error-overlay p {
+        font-size: 0.95rem;
+        }
+        }
+
+        @media (max-width: 480px) {
+        .error-overlay {
+        padding: 15px;
+        }
+        .error-overlay h1 {
+        font-size: 1.3rem;
+        }
+        .error-overlay p {
+        font-size: 0.85rem;
+        }
+        .error-overlay .button-link {
+        display: block;
+        margin: 8px auto;
+        width: 100%;
+        max-width: 250px;
+        }
+        }
     </style>
 </head>
+
 <body>
     <!-- ================= HEADER ================= -->
     <header class="header">
