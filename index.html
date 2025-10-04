@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000" />
-
-  <!-- Title & Description -->
   <title>Dub Techno Production Tutorials: Sound Design, Mixing & Studio Tips - BabyHooligan</title>
   <meta name="description" content="Step-by-step dub techno production guides. Learn sound design, mixing techniques, and studio secrets for creating deep electronic music. Free tutorials." />
-
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://babyhooligan.com/tutorials/" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap" 
-    rel="stylesheet"
-  />
-  <link 
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" 
-    rel="stylesheet"
-  />
-
-  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/styles.css" />
 
   <!-- JSON-LD Schema.org Structured Data -->
@@ -76,66 +59,47 @@
   }
   </script>
 </head>
-
 <body>
-  <!-- ======================== HEADER ======================== -->
-  <header class="header">
-    <div class="header__container">
-      <div class="header-inner">
-        
-        <!-- Logo -->
-        <div class="logo-wrapper">
-          <a href="/" class="logo">
-            <img src="/assets/logo.png" alt="BabyHooligan - Music Production Tools and Tutorials" />
-          </a>
+  
+  <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header-inner">
+                <div class="logo-wrapper">
+                    <a href="/" class="logo">
+                        <img src="/assets/logo.png" alt="BabyHooligan - Music Production Tools and Tutorials" />
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
+                    <a href="/tutorials" class="nav-link">Tutorials</a>
+                </nav>
+                <button class="menu-toggle" id="burger-button">☰</button>
+            </div>
         </div>
+    </header>
 
-        <!-- Desktop Navigation -->
-        <nav class="main-nav">
-          <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
-          <a href="/tutorials" class="nav-link">Tutorials</a>
-        </nav>
-
-        <!-- Burger Menu Button -->
-        <button class="menu-toggle" id="burger-button">☰</button>
-      </div>
+    <!-- ================= BURGER MENU ================= -->
+    <div class="burger-menu" id="burger-menu">
+        <div class="burger-menu-content">
+            <button class="burger-close" id="burger-close">✕</button>
+            <div class="burger-logo">
+                <a href="/" class="burger-logo-link">
+                    <img src="/assets/logo.png" alt="BabyHooligan Logo" />
+                </a>
+            </div>
+            <nav class="burger-nav">
+                <a href="/" class="burger-nav-link">Home</a>
+                <a href="/reverb-delay-time-calculator" class="burger-nav-link">Reverb-Delay Calculator</a>
+                <a href="/tutorials" class="burger-nav-link">Tutorials</a>
+            </nav>
+            <div class="burger-button">
+                <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" class="button-link">
+                    <img src="/assets/youtube-icon.svg" alt="YouTube" />
+                </a>
+            </div>
+        </div>
     </div>
-  </header>
-
-  <!-- ======================== BURGER MENU ======================== -->
-  <div class="burger-menu" id="burger-menu">
-    <div class="burger-menu-content">
-
-      <!-- Close Button -->
-      <button class="burger-close" id="burger-close">✕</button>
-
-      <!-- Burger Logo -->
-      <div class="burger-logo">
-        <a href="/" class="burger-logo-link">
-          <img src="/assets/logo.png" alt="BabyHooligan Logo" />
-        </a>
-      </div>
-
-      <!-- Burger Navigation -->
-      <nav class="burger-nav">
-        <a href="/" class="burger-nav-link">Home</a>
-        <a href="/reverb-delay-time-calculator" class="burger-nav-link">Reverb-Delay Calculator</a>
-        <a href="/tutorials" class="burger-nav-link">Tutorials</a>
-      </nav>
-
-      <!-- YouTube Button -->
-      <div class="burger-button">
-        <a 
-          href="https://youtube.com/@baby.hooligan" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="button-link"
-        >
-          <img src="/assets/youtube-icon.svg" alt="YouTube" />
-        </a>
-      </div>
-    </div>
-  </div>
 
   <!-- ======================== MAIN CONTENT ======================== -->
   <main>
@@ -234,50 +198,45 @@
     </div>
   </footer>
 
-  <!-- ======================== SCRIPTS ======================== -->
-  <script>
-    const burgerButton = document.getElementById("burger-button");
-    const burgerClose = document.getElementById("burger-close");
-    const burgerMenu = document.getElementById("burger-menu");
-    const body = document.body;
-    const mainNav = document.querySelector(".main-nav");
+ <script>
+        const burgerButton = document.getElementById("burger-button");
+        const burgerClose = document.getElementById("burger-close");
+        const burgerMenu = document.getElementById("burger-menu");
+        const body = document.body;
+        const mainNav = document.querySelector(".main-nav");
 
-    // Open burger menu
-    if (burgerButton && burgerMenu) {
-      burgerButton.addEventListener("click", () => {
-        if (mainNav && mainNav.classList.contains("active")) {
-          mainNav.classList.remove("active");
+        if (burgerButton && burgerMenu) {
+            burgerButton.addEventListener("click", () => {
+                if (mainNav && mainNav.classList.contains("active")) {
+                    mainNav.classList.remove("active");
+                }
+                burgerMenu.classList.add("active");
+                body.style.overflow = "hidden";
+            });
         }
-        burgerMenu.classList.add("active");
-        body.style.overflow = "hidden";
-      });
-    }
 
-    // Close burger menu
-    if (burgerClose) {
-      burgerClose.addEventListener("click", () => {
-        burgerMenu.classList.remove("active");
-        body.style.overflow = "auto";
-      });
-    }
-
-    // Close menu on nav link click
-    document.querySelectorAll('.burger-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerMenu.classList.remove("active");
-        body.style.overflow = "auto";
-      });
-    });
-
-    // Close on outside click
-    if (burgerMenu) {
-      burgerMenu.addEventListener('click', (e) => {
-        if (e.target === burgerMenu) {
-          burgerMenu.classList.remove("active");
-          body.style.overflow = "auto";
+        if (burgerClose) {
+            burgerClose.addEventListener("click", () => {
+                burgerMenu.classList.remove("active");
+                body.style.overflow = "auto";
+            });
         }
-      });
-    }
-  </script>
+
+        document.querySelectorAll('.burger-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove("active");
+                body.style.overflow = "auto";
+            });
+        });
+
+        if (burgerMenu) {
+            burgerMenu.addEventListener('click', (e) => {
+                if (e.target === burgerMenu) {
+                    burgerMenu.classList.remove("active");
+                    body.style.overflow = "auto";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
