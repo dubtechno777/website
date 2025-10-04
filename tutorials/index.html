@@ -14,43 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
-
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "name": "Dub Techno Production Tutorials",
-      "url": "https://babyhooligan.com/tutorials/",
-      "description": "Step-by-step dub techno production guides. Learn sound design, mixing techniques, and studio secrets for creating music in any genre. Free tutorials.",
-      "datePublished": "2025-09-27",
-      "author": {
-        "@type": "Person",
-        "name": "BabyHooligan"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://babyhooligan.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Tutorials",
-          "item": "https://babyhooligan.com/tutorials/"
-        }
-      ]
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -115,45 +78,6 @@
 </footer>
 
 <!-- ======================== SCRIPTS ======================== -->
-    <script>
-        const burgerButton = document.getElementById("burger-button");
-        const burgerClose = document.getElementById("burger-close");
-        const burgerMenu = document.getElementById("burger-menu");
-        const body = document.body;
-        const mainNav = document.querySelector(".main-nav");
-
-        if (burgerButton && burgerMenu) {
-            burgerButton.addEventListener("click", () => {
-                if (mainNav && mainNav.classList.contains("active")) {
-                    mainNav.classList.remove("active");
-                }
-                burgerMenu.classList.add("active");
-                body.style.overflow = "hidden";
-            });
-        }
-
-        if (burgerClose) {
-            burgerClose.addEventListener("click", () => {
-                burgerMenu.classList.remove("active");
-                body.style.overflow = "auto";
-            });
-        }
-
-        document.querySelectorAll('.burger-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu.classList.remove("active");
-                body.style.overflow = "auto";
-            });
-        });
-
-        if (burgerMenu) {
-            burgerMenu.addEventListener('click', (e) => {
-                if (e.target === burgerMenu) {
-                    burgerMenu.classList.remove("active");
-                    body.style.overflow = "auto";
-                }
-            });
-        }
-    </script>
+ <script src="/main.js" defer></script>
 </body>
 </html>
