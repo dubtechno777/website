@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
 
-  <!-- Schema.org JSON-LD -->
+  <!-- JSON-LD + Schema.org-->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,14 +24,9 @@
       "@type": "WebApplication",
       "name": "Reverb & Delay Calculator | BPM to MS Tool",
       "url": "https://babyhooligan.com/reverb-delay-time-calculator/",
-      "mainEntityOfPage": "https://babyhooligan.com/reverb-delay-time-calculator/",
-      "applicationCategory": "MusicApplication",
       "description": "Free online Reverb & Delay Calculator for music producers. Calculate precise delay and reverb times for any music genre.",
+      "applicationCategory": "MusicApplication",
       "operatingSystem": "Any",
-      "author": {
-        "@type": "Person",
-        "name": "BabyHooligan"
-      },
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -46,7 +41,7 @@
           "name": "How do you calculate delay time from BPM?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use the formula: Delay Time (ms) = 60000 / BPM. For quarter notes, multiply by 4. Our Reverb & Delay Calculator handles all note values automatically."
+            "text": "Use the formula: Delay Time (ms) = 60000 / BPM. Our Reverb & Delay Calculator handles all note values automatically."
           }
         },
         {
@@ -54,7 +49,7 @@
           "name": "What is a good pre-delay for reverb?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pre-delay should sync to your track's rhythm. For 120 BPM, start with 125-150ms pre-delay. Use our calculator to find precise values for your tempo."
+            "text": "Pre-delay should sync to your track's rhythm. Use the calculator to find precise values for your tempo."
           }
         },
         {
@@ -62,7 +57,7 @@
           "name": "How do I sync delay to BPM?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Convert BPM to milliseconds using our Reverb & Delay Calculator, then input the value into your delay plugin's time parameter."
+            "text": "Convert BPM to milliseconds using the Reverb & Delay Calculator, then input the value into your delay plugin's time parameter."
           }
         },
         {
@@ -70,7 +65,7 @@
           "name": "What BPM is 500ms?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "500ms delay time equals 120 BPM for quarter notes. For eighth notes, it would be 60 BPM. Reverse calculations are included in the tool."
+            "text": "500ms delay time equals 120 BPM for quarter notes. For eighth notes, it would be 60 BPM."
           }
         }
       ]
@@ -128,47 +123,7 @@
       <div class="content-wrapper content-wrapper--center">
         <h1 class="title-xl">Reverb & Delay Time Calculator</h1>
         <p class="text-m">Quickly convert BPM to milliseconds for delay & reverb, including dotted notes and triplets. Perfect for music producers and sound designers.</p>
-
-        <!-- STANDARD TEMPOS -->
-        <h2 class="title-l">Popular Music Tempos Reference</h2>
-        <div class="vinyl-grid">
-          <div class="vinyl vinyl--techno">
-            <div class="vinyl__art">
-              <img src="/assets/techno.jpg" alt="Techno BPM 120-140 — delay & reverb calculator reference">
-            </div>
-            <p class="vinyl__genre">TECHNO</p>
-            <p class="vinyl__bpm">120-140 BPM</p>
-          </div>
-          <div class="vinyl vinyl--house">
-            <div class="vinyl__art">
-              <img src="/assets/house.jpg" alt="House BPM 120-130 — delay & reverb calculator reference">
-            </div>
-            <p class="vinyl__genre">HOUSE</p>
-            <p class="vinyl__bpm">120-130 BPM</p>
-          </div>
-          <div class="vinyl vinyl--dnb">
-            <div class="vinyl__art">
-              <img src="/assets/dnb.jpg" alt="Drum & Bass BPM 170-180 — delay & reverb calculator reference">
-            </div>
-            <p class="vinyl__genre">DRUM & BASS</p>
-            <p class="vinyl__bpm">170-180 BPM</p>
-          </div>
-          <div class="vinyl vinyl--pop">
-            <div class="vinyl__art">
-              <img src="/assets/pop.jpg" alt="Pop BPM 100-130 — delay & reverb calculator reference">
-            </div>
-            <p class="vinyl__genre">POP</p>
-            <p class="vinyl__bpm">100-130 BPM</p>
-          </div>
-          <div class="vinyl vinyl--rock">
-            <div class="vinyl__art">
-              <img src="/assets/rock.jpg" alt="Rock BPM 110-140 — delay & reverb calculator reference">
-            </div>
-            <p class="vinyl__genre">ROCK</p>
-            <p class="vinyl__bpm">110-140 BPM</p>
-          </div>
-        </div>
-
+        
         <!-- BPM INPUT -->
         <input type="number" id="bpmInput" class="bpm-input" value="120" min="1" placeholder="Enter your BPM (e.g., 120)" />
 
@@ -291,97 +246,7 @@
   </div>
 </footer>
 
-<script>
-        const burgerButton = document.getElementById("burger-button");
-        const burgerClose = document.getElementById("burger-close");
-        const burgerMenu = document.getElementById("burger-menu");
-        const body = document.body;
-        const mainNav = document.querySelector(".main-nav");
-
-        if (burgerButton && burgerMenu) {
-            burgerButton.addEventListener("click", () => {
-                if (mainNav && mainNav.classList.contains("active")) {
-                    mainNav.classList.remove("active");
-                }
-                burgerMenu.classList.add("active");
-                body.style.overflow = "hidden";
-            });
-        }
-
-        if (burgerClose) {
-            burgerClose.addEventListener("click", () => {
-                burgerMenu.classList.remove("active");
-                body.style.overflow = "auto";
-            });
-        }
-
-        document.querySelectorAll('.burger-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu.classList.remove("active");
-                body.style.overflow = "auto";
-            });
-        });
-
-        if (burgerMenu) {
-            burgerMenu.addEventListener('click', (e) => {
-                if (e.target === burgerMenu) {
-                    burgerMenu.classList.remove("active");
-                    body.style.overflow = "auto";
-                }
-            });
-        }
-
-  // CALCULATORS
-  const bpmInput = document.getElementById('bpmInput');
-  const tableBody = document.getElementById('tableBody');
-  const reverbTableBody = document.getElementById('reverbTableBody');
-
-  const notes = ["1/1","1/2","1/4","1/8","1/16","1/32","1/64","1/128"];
-  const reverbSizes = [
-    { name:"Hall", preDelayBeats:0.125, decayBeats:7.875 },
-    { name:"Large Room", preDelayBeats:0.0625, decayBeats:3.875 },
-    { name:"Small Room", preDelayBeats:0.03125, decayBeats:1.53125 },
-    { name:"Tight Ambience", preDelayBeats:0.0078125, decayBeats:0.4921875 }
-  ];
-
-  const debounceDelay = 300;
-  function formatHz(ms){return (1000/ms).toFixed(2)+' Hz';}
-
-  function updateDelayTable(bpm){
-    tableBody.innerHTML=""; tableBody.style.opacity='0';
-    notes.forEach((note,index)=>{
-      const [base,denom]=note.split("/").map(Number);
-      const beatFactor=base/denom;
-      const ms=(60000/bpm)*(4*beatFactor);
-      const dottedMs=ms*1.5;
-      const tripletMs=(ms*2)/3;
-      tableBody.innerHTML+=`<tr style="animation-delay:${index*0.1}s"><td>${note}</td><td>${ms.toFixed(1)} ms / ${formatHz(ms)}</td><td>${dottedMs.toFixed(1)} ms / ${formatHz(dottedMs)}</td><td>${tripletMs.toFixed(1)} ms / ${formatHz(tripletMs)}</td></tr>`;
-    });
-    setTimeout(()=>{tableBody.style.opacity='1';},100);
-  }
-
-  function updateReverbTable(bpm){
-    reverbTableBody.innerHTML=""; reverbTableBody.style.opacity='0';
-    const beatMs=60000/bpm;
-    reverbSizes.forEach((size,index)=>{
-      const pre=size.preDelayBeats*beatMs;
-      const decay=size.decayBeats*beatMs;
-      const total=pre+decay;
-      reverbTableBody.innerHTML+=`<tr style="animation-delay:${index*0.1}s"><td>${size.name}</td><td>${pre.toFixed(2)} ms</td><td>${decay.toFixed(2)} ms</td><td>${total.toFixed(2)} ms</td></tr>`;
-    });
-    setTimeout(()=>{reverbTableBody.style.opacity='1';},100);
-  }
-
-  function updateTables(){
-    const bpm=Number(bpmInput.value);
-    if(!bpm||bpm<1) return;
-    setTimeout(()=>{updateDelayTable(bpm);updateReverbTable(bpm);},debounceDelay);
-  }
-
-  if(bpmInput&&tableBody&&reverbTableBody){
-    bpmInput.addEventListener('input',updateTables);
-    updateTables();
-  }
-</script>
+<!-- ======================== SCRIPTS ======================== -->
+ <script src="/main.js" defer></script>
 </body>
 </html>
