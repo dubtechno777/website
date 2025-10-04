@@ -4,21 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000" />
-  
-  <!-- Title & Description -->
   <title>Dub Techno Production Tutorials — Sound Design, Mixing & Studio Tips | BabyHooligan</title>
   <meta name="description" content="Step-by-step dub techno production guides. Learn sound design, mixing techniques, and studio secrets for creating music in any genre. Free tutorials." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://babyhooligan.com/tutorials/" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css" />
 
   <!-- Schema.org JSON-LD -->
@@ -60,53 +54,52 @@
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header-inner">
+                <div class="logo-wrapper">
+                    <a href="/" class="logo">
+                        <img src="/assets/logo.png" alt="BabyHooligan - Music Production Tools and Tutorials" />
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
+                    <a href="/tutorials" class="nav-link">Tutorials</a>
+                </nav>
+                <button class="menu-toggle" id="burger-button">☰</button>
+            </div>
+        </div>
+    </header>
 
-  <!-- HEADER -->
-<header class="header">
-  <div class="header__container">
-    <div class="header-inner">
-      <div class="logo-wrapper">
-        <a href="/" class="logo"><img src="/assets/logo.png" alt="BabyHooligan - Music Production Tools and Tutorials" /></a>
-      </div>
-      <nav class="main-nav">
-        <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
-        <a href="/tutorials" class="nav-link">Tutorials</a>
-      </nav>
-      <button class="menu-toggle" id="burger-button">☰</button>
+    <!-- ================= BURGER MENU ================= -->
+    <div class="burger-menu" id="burger-menu">
+        <div class="burger-menu-content">
+            <button class="burger-close" id="burger-close">✕</button>
+            <div class="burger-logo">
+                <a href="/" class="burger-logo-link">
+                    <img src="/assets/logo.png" alt="BabyHooligan Logo" />
+                </a>
+            </div>
+            <nav class="burger-nav">
+                <a href="/" class="burger-nav-link">Home</a>
+                <a href="/reverb-delay-time-calculator" class="burger-nav-link">Reverb-Delay Calculator</a>
+                <a href="/tutorials" class="burger-nav-link">Tutorials</a>
+            </nav>
+            <div class="burger-button">
+                <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" class="button-link">
+                    <img src="/assets/youtube-icon.svg" alt="YouTube" />
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
-</header>
 
-  <!-- BURGER MENU -->
-  <div class="burger-menu" id="burger-menu">
-    <div class="burger-menu-content">
-      <button class="burger-close" id="burger-close">✕</button>
-      <div class="burger-logo">
-        <a href="/" class="burger-logo-link">
-          <img src="/assets/logo.png" alt="BabyHooligan Logo" />
-        </a>
-      </div>
-      <nav class="burger-nav">
-        <a href="/" class="burger-nav-link">Home</a>
-        <a href="/reverb-delay-time-calculator" class="burger-nav-link">Reverb-Delay Calculator</a>
-        <a href="/tutorials" class="burger-nav-link">Tutorials</a>
-      </nav>
-      <div class="burger-button">
-        <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" class="button-link">
-          <img src="/assets/youtube-icon.svg" alt="YouTube" />
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- MAIN CONTENT -->
+  <!-- ======================== MAIN CONTENT ======================== -->
   <main>
     <section class="section">
       <div class="content-wrapper content-wrapper--center">
-         <h1 class="title-l">DUB TECHNO PRODUCTION TUTORIALS</h1>
-         <p class="text-m">
-          We're cooking up something special! Dub techno tutorials, sound design tips, and production guides are on the way.
-         </p>
+        <h1 class="title-l">DUB TECHNO PRODUCTION TUTORIALS</h1>
+         <p class="text-m">We're cooking up something special! Dub techno tutorials, sound design tips, and production guides are on the way.</p>
          <a href="https://youtube.com/@baby.hooligan" target="_blank" rel="noopener noreferrer" class="button-link">
            <img src="/assets/youtube-icon.svg" alt="YouTube" />
          </a>
@@ -114,52 +107,53 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
   <footer class="footer">
   <div class="footer-inner"> 
     <p class="footer-text">BABYHOOLIGAN 2025</p>
   </div>
 </footer>
 
-  <script>
-    const burgerButton = document.getElementById("burger-button");
-    const burgerClose = document.getElementById("burger-close");
-    const burgerMenu = document.getElementById("burger-menu");
-    const body = document.body;
-    const mainNav = document.querySelector(".main-nav");
+<!-- ======================== SCRIPTS ======================== -->
+    <script>
+        const burgerButton = document.getElementById("burger-button");
+        const burgerClose = document.getElementById("burger-close");
+        const burgerMenu = document.getElementById("burger-menu");
+        const body = document.body;
+        const mainNav = document.querySelector(".main-nav");
 
-    if (burgerButton && burgerMenu) {
-      burgerButton.addEventListener("click", () => {
-        if (mainNav && mainNav.classList.contains("active")) {
-          mainNav.classList.remove("active");
+        if (burgerButton && burgerMenu) {
+            burgerButton.addEventListener("click", () => {
+                if (mainNav && mainNav.classList.contains("active")) {
+                    mainNav.classList.remove("active");
+                }
+                burgerMenu.classList.add("active");
+                body.style.overflow = "hidden";
+            });
         }
-        burgerMenu.classList.add("active");
-        body.style.overflow = "hidden";
-      });
-    }
 
-    if (burgerClose) {
-      burgerClose.addEventListener("click", () => {
-        burgerMenu.classList.remove("active");
-        body.style.overflow = "auto";
-      });
-    }
-
-    document.querySelectorAll('.burger-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerMenu.classList.remove("active");
-        body.style.overflow = "auto";
-      });
-    });
-
-    if (burgerMenu) {
-      burgerMenu.addEventListener('click', (e) => {
-        if (e.target === burgerMenu) {
-          burgerMenu.classList.remove("active");
-          body.style.overflow = "auto";
+        if (burgerClose) {
+            burgerClose.addEventListener("click", () => {
+                burgerMenu.classList.remove("active");
+                body.style.overflow = "auto";
+            });
         }
-      });
-    }
-  </script>
+
+        document.querySelectorAll('.burger-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove("active");
+                body.style.overflow = "auto";
+            });
+        });
+
+        if (burgerMenu) {
+            burgerMenu.addEventListener('click', (e) => {
+                if (e.target === burgerMenu) {
+                    burgerMenu.classList.remove("active");
+                    body.style.overflow = "auto";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
