@@ -14,50 +14,30 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/styles.css" />
 
-  <!-- JSON-LD Schema.org Structured Data -->
+  <!-- JSON-LD + Schema.org-->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://babyhooligan.com/#website",
-        "url": "https://babyhooligan.com/",
-        "name": "BabyHooligan",
-        "description": "Music production tools, tutorials, and resources for producers of all music genres.",
-        "publisher": {
-          "@id": "https://babyhooligan.com/#organization"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "BabyHooligan",
+      "url": "https://babyhooligan.com/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://babyhooligan.com/"
         }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://babyhooligan.com/tutorials/#webpage",
-        "url": "https://babyhooligan.com/tutorials/",
-        "name": "Dub Techno Production Tutorials",
-        "isPartOf": {
-          "@id": "https://babyhooligan.com/#website"
-        },
-        "description": "Step-by-step dub techno production guides, sound design tips, and studio secrets for creating deep electronic music.",
-        "inLanguage": "en",
-        "datePublished": "2025-09-27",
-        "dateModified": "2025-09-27"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://babyhooligan.com/#organization",
-        "name": "BabyHooligan",
-        "url": "https://babyhooligan.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://babyhooligan.com/assets/logo.png"
-        },
-        "sameAs": [
-          "https://youtube.com/@baby.hooligan"
-        ]
-      }
-    ]
-  }
-  </script>
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   
@@ -131,10 +111,10 @@
         <!-- Videos Preview -->
         <div class="container column-grid">
           <div class="image-block">
-            <img src="/assets/image-01.png" alt="Video Volume 1" />
+            <img src="/assets/image-01.png" alt="Video Volume 1" loading="lazy" />
           </div>
           <div class="image-block">
-            <img src="/assets/image-02.png" alt="Video Volume 2" />
+            <img src="/assets/image-02.png" alt="Video Volume 2" loading="lazy" />
           </div>
         </div>
 
@@ -156,7 +136,7 @@
           </p>
         </div>
         <div class="image-block">
-          <img src="/assets/background-06.webp" alt="Music Studio" />
+          <img src="/assets/background-06.webp" alt="Music Studio" loading="lazy" />
         </div>
       </div>
     </section>
@@ -198,45 +178,7 @@
     </div>
   </footer>
 
- <script>
-        const burgerButton = document.getElementById("burger-button");
-        const burgerClose = document.getElementById("burger-close");
-        const burgerMenu = document.getElementById("burger-menu");
-        const body = document.body;
-        const mainNav = document.querySelector(".main-nav");
-
-        if (burgerButton && burgerMenu) {
-            burgerButton.addEventListener("click", () => {
-                if (mainNav && mainNav.classList.contains("active")) {
-                    mainNav.classList.remove("active");
-                }
-                burgerMenu.classList.add("active");
-                body.style.overflow = "hidden";
-            });
-        }
-
-        if (burgerClose) {
-            burgerClose.addEventListener("click", () => {
-                burgerMenu.classList.remove("active");
-                body.style.overflow = "auto";
-            });
-        }
-
-        document.querySelectorAll('.burger-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu.classList.remove("active");
-                body.style.overflow = "auto";
-            });
-        });
-
-        if (burgerMenu) {
-            burgerMenu.addEventListener('click', (e) => {
-                if (e.target === burgerMenu) {
-                    burgerMenu.classList.remove("active");
-                    body.style.overflow = "auto";
-                }
-            });
-        }
-    </script>
+ <!-- ======================== SCRIPTS ======================== -->
+ <script src="/main.js" defer></script>
 </body>
 </html>
