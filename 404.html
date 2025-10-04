@@ -7,7 +7,6 @@
   <title>404 — Page Not Found | BabyHooligan</title>
   <meta name="description" content="Oops! The page you're looking for cannot be found. Explore our tools and tutorials on BabyHooligan." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://babyhooligan.com/tutorials/" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,45 +79,6 @@
     </footer>
 
     <!-- ======================== SCRIPTS ======================== -->
-    <script>
-        const burgerButton = document.getElementById("burger-button");
-        const burgerClose = document.getElementById("burger-close");
-        const burgerMenu = document.getElementById("burger-menu");
-        const body = document.body;
-        const mainNav = document.querySelector(".main-nav");
-
-        if (burgerButton && burgerMenu) {
-            burgerButton.addEventListener("click", () => {
-                if (mainNav && mainNav.classList.contains("active")) {
-                    mainNav.classList.remove("active");
-                }
-                burgerMenu.classList.add("active");
-                body.style.overflow = "hidden";
-            });
-        }
-
-        if (burgerClose) {
-            burgerClose.addEventListener("click", () => {
-                burgerMenu.classList.remove("active");
-                body.style.overflow = "auto";
-            });
-        }
-
-        document.querySelectorAll('.burger-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu.classList.remove("active");
-                body.style.overflow = "auto";
-            });
-        });
-
-        if (burgerMenu) {
-            burgerMenu.addEventListener('click', (e) => {
-                if (e.target === burgerMenu) {
-                    burgerMenu.classList.remove("active");
-                    body.style.overflow = "auto";
-                }
-            });
-        }
-    </script>
+ <script src="/main.js" defer></script>
 </body>
 </html>
