@@ -390,10 +390,12 @@ main {
   max-width: 400px;
   padding: 40px;
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-  box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(0, 150, 255, 0.1) inset;
+  background: transparent; /* Полностью прозрачный фон */
+  backdrop-filter: blur(20px); /* Усиливаем блюр для контента */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
   position: relative;
   transform-style: preserve-3d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Кнопка закрытия */
@@ -404,7 +406,7 @@ main {
   width: 50px;
   height: 50px;
   font-size: 28px;
-  color: var(--accent-color);
+  color: var(--text-color);
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 50%;
@@ -416,9 +418,10 @@ main {
   backdrop-filter: blur(15px);
 }
 .burger-close:hover {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.1);
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  color: var(--accent-color);
 }
 
 /* Логотип */
@@ -427,12 +430,10 @@ main {
 }
 .burger-logo-link img {
   height: 60px;
-  filter: drop-shadow(0 0 20px rgba(0, 255, 200, 0.3));
   transition: all 0.3s ease;
 }
 .burger-logo-link:hover img {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 35px rgba(0, 255, 255, 0.5));
+  transform: scale(1.1);
 }
 
 /* Навигация */
@@ -449,7 +450,6 @@ main {
   font-weight: 500;
   color: var(--text-color);
   text-decoration: none;
-  text-transform: uppercase;
   padding: 15px 25px;
   width: 100%;
   text-align: center;
@@ -461,8 +461,9 @@ main {
 }
 .burger-nav-link:hover {
   color: var(--accent-color);
-  background: rgba(0,255,255,0.1);
-  box-shadow: 0 0 15px rgba(0,255,255,0.4);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Кнопка YouTube */
@@ -481,15 +482,18 @@ main {
   transition: all 0.3s ease;
 }
 .burger-button .button-link:hover {
-  background: rgba(0,255,255,0.15);
+  background: rgba(255, 255, 255, 0.1);
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .burger-button .button-link img {
   width: 45px;
   height: 45px;
-  filter: drop-shadow(0 0 10px rgba(0,255,255,0.3));
   transition: all 0.3s ease;
+}
+.burger-button .button-link:hover img {
+  filter: brightness(1.2);
 }
 
 /* ==================== ANIMATIONS ==================== */
