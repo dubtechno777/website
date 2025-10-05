@@ -5,7 +5,7 @@
   --text-color: #FFFFFF;
   --description-color: #d0d0d0;
   --font-main: 'Saira Extra Condensed', sans-serif;
-  --font-secondary: "IBM Plex Sans", sans-serif;
+  --font-secondary: 'Manrope', sans-serif;
 }
 
 * {
@@ -194,8 +194,8 @@ main {
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  background-color: rgba(87, 124, 110, 0.495);
-  backdrop-filter: blur(4px);
+  background-color: rgba(25, 25, 25, 0.755);
+  backdrop-filter: blur(6px);
   width: calc(100% - 80px);
   max-width: 1440px;
   border-radius: 8px;
@@ -358,7 +358,7 @@ main {
   main { padding-top: 54px; }
 }
 
-/* ======================= BURGER MENU - HOLOGRAPHIC PANEL ============================ */
+/* ======================= BURGER MENU  ============================ */
 .burger-menu {
   position: fixed;
   top: 0;
@@ -646,108 +646,12 @@ main {
   margin-bottom: 20px;
 }
 
-/* ========================= VINYL GRID =========================== */
-.vinyl-grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin: 40px 0;
-}
-
-.vinyl {
-  text-align: center;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.vinyl:hover {
-  transform: scale(1.05);
-}
-
-.vinyl__art {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 15px;
-  border: 3px solid;
-}
-
-.vinyl--techno .vinyl__art { 
-  border-color: #ffffff; 
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
-}
-
-.vinyl--house .vinyl__art { 
-  border-color: #483D8B; 
-  box-shadow: 0 0 10px rgba(72, 61, 139, 0.4); 
-}
-
-.vinyl--dnb .vinyl__art { 
-  border-color: #2E8B57; 
-  box-shadow: 0 0 10px rgba(46, 139, 87, 0.4); 
-}
-
-.vinyl--pop .vinyl__art { 
-  border-color: #B8860B; 
-  box-shadow: 0 0 10px rgba(184, 134, 11, 0.4); 
-}
-
-.vinyl--rock .vinyl__art { 
-  border-color: #8B4513; 
-  box-shadow: 0 0 10px rgba(139, 69, 19, 0.4); 
-}
-
-.vinyl__art img {
+.image-block video {
   width: 100%;
-  height: 100%;
+  height: 100%; /* можно заменить на 100% для полного покрытия */
   object-fit: cover;
-}
-
-.vinyl__genre {
-  font-weight: 700;
-  margin: 0;
-  font-size: 16px;
-}
-
-.vinyl--techno .vinyl__genre { color: #ffffff; }
-.vinyl--house .vinyl__genre { color: #483D8B; }
-.vinyl--dnb .vinyl__genre { color: #2E8B57; }
-.vinyl--pop .vinyl__genre { color: #B8860B; }
-.vinyl--rock .vinyl__genre { color: #8B4513; }
-
-.vinyl__bpm {
-  margin: 5px 0 0;
-  color: var(--description-color);
-  font-size: 14px;
-}
-
-/* ================= VINYL GRID ADAPTIVE ================= */
-@media (max-width: 768px) {
-  .vinyl-grid { gap: 20px; }
-  .vinyl__art {
-    width: 70px;
-    height: 70px;
-    border-width: 2px;
-  }
-}
-
-@media (max-width: 480px) {
-  .vinyl-grid { gap: 15px; }
-  .vinyl__art {
-    width: 60px;
-    height: 60px;
-  }
-  .vinyl__genre { font-size: 14px; }
-}
-
-@media (max-width: 360px) {
-  .vinyl-grid { gap: 10px; }
-  .vinyl__art {
-    width: 50px;
-    height: 50px;
-  }
+  display: block;
+  border-radius: 12px; /* если хочешь сохранить закругления картинки */
 }
 
 /* ======================= CALCULATOR ============================= */
