@@ -650,13 +650,16 @@ main {
   margin-bottom: 20px;
 }
 
+.image-block img,
 .image-block video {
+  max-width: 100%;
   width: 100%;
-  height: 100%; /* можно заменить на 100% для полного покрытия */
-  object-fit: cover;
+  max-width: 1360px; /* ограничение по ширине */
+  border-radius: 12px;
   display: block;
-  border-radius: 12px; /* если хочешь сохранить закругления картинки */
+  margin: 0 auto;
 }
+
 
 /* ======================= CALCULATOR ============================= */
 .bpm-input {
