@@ -11,72 +11,13 @@
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
-
-  <!-- JSON-LD + Schema.org-->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebApplication",
-      "name": "Reverb & Delay Calculator | BPM to MS Tool",
-      "url": "https://babyhooligan.com/reverb-delay-time-calculator/",
-      "description": "Free online Reverb & Delay Calculator for music producers. Calculate precise delay and reverb times for any music genre.",
-      "applicationCategory": "MusicApplication",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How do you calculate delay time from BPM?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Use the formula: Delay Time (ms) = 60000 / BPM. Our Reverb & Delay Calculator handles all note values automatically."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is a good pre-delay for reverb?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pre-delay should sync to your track's rhythm. Use the calculator to find precise values for your tempo."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I sync delay to BPM?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Convert BPM to milliseconds using the Reverb & Delay Calculator, then input the value into your delay plugin's time parameter."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What BPM is 500ms?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "500ms delay time equals 120 BPM for quarter notes. For eighth notes, it would be 60 BPM."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
+  <!-- ================= HEADER ================= -->
     <header class="header">
         <div class="header__container">
             <div class="header-inner">
@@ -89,8 +30,10 @@
                     <a href="/reverb-delay-time-calculator" class="nav-link">Reverb-Delay Calculator</a>
                     <a href="/tutorials" class="nav-link">Tutorials</a>
                 </nav>
-                <button class="menu-toggle" id="burger-button">☰</button>
-            </div>
+                <button class="menu-toggle" id="burger-button">
+                    <img src="/assets/burger.svg" alt="Menu" />
+                </button>
+              </div>
         </div>
     </header>
 
@@ -120,18 +63,37 @@
 <main>
   <section class="section">
     <div class="container">
-      <div class="content-wrapper content-wrapper--center">
-        <h1 class="title-xl">Reverb & Delay Time Calculator</h1>
-        <p class="text-m">Quickly convert BPM to milliseconds for delay & reverb, including dotted notes and triplets. Perfect for music producers and sound designers.</p>
-        
-        <!-- BPM INPUT -->
-        <input type="number" id="bpmInput" class="bpm-input" value="120" min="1" placeholder="Enter your BPM (e.g., 120)" />
-
-        <!-- REVERB CALCULATOR -->
-        <h2 class="title-s">Reverb Calculator (Pre-Delay & Decay)</h2>
-        <p class="text-s">
-          Take the guesswork out of reverb timing. Quickly calculate <strong>pre-delay</strong> and <strong>decay times</strong> using the <strong>BPM to MS Calculator</strong>, and create reverbs that sit perfectly in your mix — from subtle ambience to massive, lush spaces.
+      
+      <!-- Заголовок -->
+      <div class="content content--center mb-l">
+        <h1 class="title-xl mb-m">Reverb & Delay Time Calculator</h1>
+        <p class="text-m">
+          Quickly convert BPM to milliseconds for delay & reverb, including dotted notes and triplets.
+          Perfect for music producers and sound designers.
         </p>
+      </div>
+
+      <!-- BPM Input -->
+      <div class="content content--center mb-l">
+        <input
+          type="number"
+          id="bpmInput"
+          class="bpm-input"
+          value="120"
+          min="1"
+          placeholder="Enter your BPM (e.g., 120)"
+        />
+      </div>
+
+      <!-- Reverb Calculator -->
+      <div class="content content--center mb-l">
+        <h2 class="text-accent mb-s">Reverb Calculator (Pre-Delay & Decay)</h2>
+        <p class="text-s mb-m">
+          Take the guesswork out of reverb timing. Quickly calculate <strong>pre-delay</strong> and
+          <strong>decay times</strong> using the <strong>BPM to MS Calculator</strong>, and create reverbs
+          that sit perfectly in your mix — from subtle ambience to massive, lush spaces.
+        </p>
+
         <table class="calculator-table">
           <thead>
             <tr>
@@ -143,12 +105,15 @@
           </thead>
           <tbody id="reverbTableBody"></tbody>
         </table>
+      </div>
 
-        <!-- DELAY CALCULATOR -->
-        <h2 class="title-s">Delay Calculator (BPM to MS / Hz)</h2>
-        <p class="text-s">
+      <!-- Delay Calculator -->
+      <div class="content content--center mb-l">
+        <h2 class="text-accent mb-s">Delay Calculator (BPM to MS / Hz)</h2>
+        <p class="text-s mb-m">
           Make your delays groove with your music. Calculate <strong>millisecond values</strong> for straight notes, dotted notes, and triplets, and achieve precise timing for echo and delay effects on any BPM.
         </p>
+
         <table class="calculator-table">
           <thead>
             <tr>
@@ -161,83 +126,104 @@
           <tbody id="tableBody"></tbody>
         </table>
       </div>
+
     </div>
   </section>
 
   <!-- THE SCIENCE OF SPACE -->
   <section class="section">
-  <div class="container">
-    <div class="content-wrapper content-wrapper--center">
-      <h2 class="title-xl">The Science of Space</h2>
-      <p class="text-m"><strong>Why timing is everything in reverb and delay</strong></p>
+    <div class="container">
+      <div class="content content--center mb-l">
+        <h2 class="title-xl mb-m">The Science of Space</h2>
+        <p class="text-m">Why timing is everything in reverb and delay</p>
+      </div>
 
-      <!-- 1. The Problem with Guessing -->
-      <h3 class="title-s">The Problem with Guesswork</h3>
-      <p class="text-s">
-        Ever set a reverb or delay by ear and wonder why it feels off? Without knowing the exact <strong>milliseconds</strong>, your reverbs can wash out the mix and delays might drift away from the rhythm. <strong>Guessing timing</strong> often leads to cluttered, unbalanced tracks — and nobody wants that.
-      </p>
+      <div class="content content--left mb-l">
+        <h3 class="text-accent mb-s">The Problem with Guesswork:</h3>
+        <p class="text-s mb-l">
+          Ever set a reverb or delay by ear and wonder why it feels off? Without knowing the exact
+          milliseconds, your reverbs can wash out the mix and delays might drift away from the rhythm.
+          Guessing timing often leads to cluttered, unbalanced tracks — and nobody wants that.
+        </p>
 
-      <!-- 2. How Pros Think About Time -->
-      <h3 class="title-s">How Pros Approach Timing</h3>
-      <p class="text-s">
-        Experienced producers don’t rely on luck — they calculate. Turning BPM into <strong>precise milliseconds</strong> for straight notes, dotted notes, and triplets ensures that each reverb tail and delay echo hits perfectly. Timing becomes a tool, not a gamble, keeping the groove tight and the mix clear.
-      </p>
+        <h3 class="text-accent mb-s">How Pros Approach Timing:</h3>
+        <p class="text-s mb-l">
+          Experienced producers don’t rely on luck — they calculate. Turning BPM into precise milliseconds
+          ensures that each reverb tail and delay echo hits perfectly. Timing becomes a tool, not a gamble.
+        </p>
 
-      <!-- 3. The Solution: Precision -->
-      <h3 class="title-s">Precision is Everything</h3>
-      <p class="text-s">
-        With a <strong>BPM to MS Calculator</strong>, you get exact numbers for pre-delay, decay, and delay times. At 120 BPM, a quarter-note delay is 500ms — easy, right? Precision lets you craft spaces that feel natural, whether it’s a subtle ambience behind vocals or a massive, lush reverb for pads.
-      </p>
+        <h3 class="text-accent mb-s">Precision is Everything:</h3>
+        <p class="text-s mb-l">
+          With a BPM to MS Calculator, you get exact numbers for pre-delay, decay, and delay times.
+          At 120 BPM, a quarter-note delay is 500ms — easy, right? Precision lets you craft spaces that feel natural,
+          whether it’s a subtle ambience behind vocals or a massive, lush reverb for pads.
+        </p>
 
-      <!-- 4. From Technical to Musical -->
-      <h3 class="title-s">From Numbers to Musical Feeling</h3>
-      <p class="text-s">
-        The magic happens when you turn technical calculations into musical choices. Using accurate timings as your base, you can shape <strong>reverb and delay</strong> to enhance emotion, groove, and energy. The <strong>BPM to MS Calculator</strong> bridges the gap between cold numbers and expressive sound, letting your tracks breathe while staying perfectly in sync.
-      </p>
+        <h3 class="text-accent mb-s">From Numbers to Musical Feeling:</h3>
+        <p class="text-s">
+          The magic happens when you turn technical calculations into musical choices. 
+          Using accurate timings as your base, you can shape reverb and delay to enhance emotion, groove, and energy. 
+          The BPM to MS Calculator bridges the gap between cold numbers and expressive sound, letting your tracks breathe while staying perfectly in sync.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-      <!-- FAQ SECTION -->
+  <!-- FAQ SECTION -->
   <section class="section">
-  <div class="container">
-    <div class="content-wrapper content-wrapper--center">
-      <h2 class="title-l">FAQ</h2>
-      <p class="text-m">All your questions about calculating precise reverb and delay times answered. Learn how timing transforms your mixes and why professional producers rely on accurate BPM-to-millisecond calculations.</p>
+    <div class="container">
+      <div class="content content--center mb-l">
+        <h2 class="title-xl mb-m">FAQ</h2>
+        <p class="text-m">
+          All your questions about calculating precise reverb and delay times answered. Learn how timing transforms
+          your mixes and why professional producers rely on accurate BPM-to-millisecond calculations.
+        </p>
+      </div>
 
-      <!-- FAQ ITEM 1 -->
-      <h3 class="title-s">How do I convert BPM to milliseconds?</h3>
-      <p class="text-s">
-        Converting BPM to milliseconds is the foundation of precise timing. The simple formula <strong>ms = 60000 / BPM</strong> gives the duration of a quarter note. From there, you can calculate dotted notes, triplets, and any note value to synchronize delay and reverb perfectly with your track. Using exact millisecond values eliminates guesswork, ensures tight rhythmic alignment, and allows you to create professional, polished mixes where every element sits perfectly in the tempo of the song.
-      </p>
+      <div class="content content--left mb-l">
+        <h3 class="text-accent mb-s">How do I convert BPM to milliseconds?</h3>
+        <p class="text-s mb-l">
+          Converting BPM to milliseconds is the foundation of precise timing. 
+          The simple formula ms = 60000 / BPM gives the duration of a quarter note. 
+          From there, you can calculate dotted notes, triplets, and any note value to synchronize delay and reverb perfectly with your track. 
+          Using exact millisecond values eliminates guesswork, ensures tight rhythmic alignment, and allows you to create professional, polished mixes where every element sits perfectly in the tempo of the song.
+        </p>
 
-      <!-- FAQ ITEM 2 -->
-      <h3 class="title-s">What is pre-delay and why does it matter?</h3>
-      <p class="text-s">
-        Pre-delay is the short gap between the dry sound and the start of the reverb tail. It controls the sense of space, helping vocals, instruments, and pads to remain clear while adding depth. Calculating pre-delay in milliseconds ensures your reverbs feel natural and musical. With the <strong>BPM to MS Calculator</strong>, you can match pre-delay to your song’s tempo accurately, making your mix sound professional whether you’re working on subtle ambience, large halls, or lush, expansive spaces.
-      </p>
+        <h3 class="text-accent mb-s">What is pre-delay and why does it matter?</h3>
+        <p class="text-s mb-l">
+          Pre-delay is the short gap between the dry sound and the start of the reverb tail. 
+          It controls the sense of space, helping vocals, instruments, and pads to remain clear while adding depth. 
+          Calculating pre-delay in milliseconds ensures your reverbs feel natural and musical. 
+          With the BPM to MS Calculator, you can match pre-delay to your song’s tempo accurately, making your mix sound professional whether you’re working on subtle ambience, large halls, or lush, expansive spaces.
+        </p>
 
-      <!-- FAQ ITEM 3 -->
-      <h3 class="title-s">How do dotted notes and triplets affect delay timing?</h3>
-      <p class="text-s">
-        Dotted notes increase a note's duration by half, and triplets divide a beat into three equal parts. These rhythmic variations allow your delays to create interesting textures and grooves. Calculating exact millisecond values for dotted notes and triplets ensures your echoes sync perfectly with your music. This level of precision allows you to craft rhythmic delays that complement the feel of your track, making them an integral part of the composition rather than just an effect.
-      </p>
+        <h3 class="text-accent mb-s">How do dotted notes and triplets affect delay timing?</h3>
+        <p class="text-s mb-l">
+          Dotted notes increase a note's duration by half, and triplets divide a beat into three equal parts. 
+          These rhythmic variations allow your delays to create interesting textures and grooves. 
+          Calculating exact millisecond values for dotted notes and triplets ensures your echoes sync perfectly with your music. 
+          This level of precision allows you to craft rhythmic delays that complement the feel of your track, making them an integral part of the composition rather than just an effect.
+        </p>
 
-      <!-- FAQ ITEM 4 -->
-      <h3 class="title-s">Can I use this for any genre?</h3>
-      <p class="text-s">
-        Absolutely. Accurate timing is universal across all musical styles—techno, house, pop, rock, drum & bass, or experimental electronic music. While each genre has typical BPM ranges, calculating precise pre-delay, decay, and delay values ensures your effects always sound <strong>musical, professional, and perfectly timed</strong>. With the BPM to MS Calculator, you can adapt your timing choices to any style, from subtle textures to complex rhythmic patterns.
-      </p>
+        <h3 class="text-accent mb-s">Can I use this for any genre?</h3>
+        <p class="text-s mb-l">
+          Absolutely. Accurate timing is universal across all musical styles—techno, house, pop, rock, drum & bass, or experimental electronic music. 
+          While each genre has typical BPM ranges, calculating precise pre-delay, decay, and delay values ensures your effects always sound musical, professional, and perfectly timed. 
+          With the BPM to MS Calculator, you can adapt your timing choices to any style, from subtle textures to complex rhythmic patterns.
+        </p>
 
-      <!-- FAQ ITEM 5 -->
-      <h3 class="title-s">Why is precision important in mixing?</h3>
-      <p class="text-s">
-        Mixing without precise timing often leads to muddiness, rhythm clashes, or effects that feel out of place. Calculating exact pre-delay, decay, and delay values allows you to achieve clarity, depth, and groove in your mix. The <strong>BPM to MS Calculator</strong> transforms technical measurements into actionable musical decisions, giving you full control over your sonic space. Precision lets your tracks breathe, sit well together, and maintain a professional polish across all elements of your production.
-      </p>
+        <h3 class="text-accent mb-s">Why is precision important in mixing?</h3>
+        <p class="text-s">
+          Mixing without precise timing often leads to muddiness, rhythm clashes, or effects that feel out of place. 
+          Calculating exact pre-delay, decay, and delay values allows you to achieve clarity, depth, and groove in your mix. 
+          The BPM to MS Calculator transforms technical measurements into actionable musical decisions, giving you full control over your sonic space. 
+          Precision lets your tracks breathe, sit well together, and maintain a professional polish across all elements of your production.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </main>
+
 
 <!-- ======================== FOOTER ======================== -->
 <footer class="footer">
@@ -246,7 +232,6 @@
   </div>
 </footer>
 
-<!-- ======================== SCRIPTS ======================== -->
- <script src="/main.js" defer></script>
+<script src="/main.js" defer></script>
 </body>
 </html>
