@@ -3,40 +3,36 @@ const burgerButton = document.getElementById("burger-button");
 const burgerClose = document.getElementById("burger-close");
 const burgerMenu = document.getElementById("burger-menu");
 const body = document.body;
-const mainNav = document.querySelector(".main-nav");
 
-if (burgerButton && burgerMenu) {
-    burgerButton.addEventListener("click", () => {
-        if (mainNav && mainNav.classList.contains("active")) {
-            mainNav.classList.remove("active");
-        }
-        burgerMenu.classList.add("active");
-        body.style.overflow = "hidden";
-    });
-}
-
-if (burgerClose) {
-    burgerClose.addEventListener("click", () => {
-        burgerMenu.classList.remove("active");
-        body.style.overflow = "auto";
-    });
-}
-
-document.querySelectorAll('.burger-nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        burgerMenu.classList.remove("active");
-        body.style.overflow = "auto";
-    });
+burgerButton.addEventListener("click", () => {
+  burgerMenu.classList.add("active");
+  burgerButton.classList.add("active");
+  body.style.overflow = "hidden";
 });
 
-if (burgerMenu) {
-    burgerMenu.addEventListener('click', (e) => {
-        if (e.target === burgerMenu) {
-            burgerMenu.classList.remove("active");
-            body.style.overflow = "auto";
-        }
-    });
-}
+burgerClose.addEventListener("click", () => {
+  burgerMenu.classList.remove("active");
+  burgerButton.classList.remove("active");
+  body.style.overflow = "auto";
+});
+
+document.querySelectorAll(".burger-nav-link").forEach(link => {
+  link.addEventListener("click", () => {
+    burgerMenu.classList.remove("active");
+    burgerButton.classList.remove("active");
+    body.style.overflow = "auto";
+  });
+});
+
+// Закрытие меню по клику вне контента
+burgerMenu.addEventListener("click", (e) => {
+  if (e.target === burgerMenu) {
+    burgerMenu.classList.remove("active");
+    burgerButton.classList.remove("active");
+    body.style.overflow = "auto";
+  }
+});
+
 
 // ================= CALCULATOR =================
 const bpmInput = document.getElementById('bpmInput');
